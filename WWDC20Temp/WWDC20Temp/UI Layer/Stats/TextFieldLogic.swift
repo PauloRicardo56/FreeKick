@@ -23,4 +23,14 @@ extension PlayerStats: UITextFieldDelegate {
             }
         }
     }
+    
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        shootButton.turnInactive()
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
 }
