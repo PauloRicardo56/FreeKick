@@ -10,7 +10,8 @@ protocol ShootButtonStatsProtocol {
 extension ShootButton: ShootButtonStatsProtocol {
     
     func turnActive() {
-        //TODO: Activate animation
+        // TODO: Activate animation
+        self.isUserInteractionEnabled = true
         self.alpha = 1
     }
 }

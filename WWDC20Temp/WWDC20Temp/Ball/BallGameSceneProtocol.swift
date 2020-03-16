@@ -3,11 +3,18 @@ import SpriteKit
 
 protocol BallGameSceneProtocol {
     
+    var setBallStats: StatsBallProtocol { get set }
+    
     func loadBall() -> SKSpriteNode
 }
 
 
 extension BallViewModel: BallGameSceneProtocol {
+    
+    var setBallStats: StatsBallProtocol {
+        get { return stats }
+        set { stats = newValue }
+    }
     
     func loadBall() -> SKSpriteNode {
         

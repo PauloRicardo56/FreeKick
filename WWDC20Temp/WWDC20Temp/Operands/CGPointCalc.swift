@@ -24,6 +24,14 @@ extension CGPoint {
     }
     
     
+    static func +(lhs: CGPoint, rhs: Int) -> CGPoint {
+        
+        let x = lhs.x + CGFloat(rhs)
+        let y = lhs.y + CGFloat(rhs)
+        return CGPoint(x: x, y: y)
+    }
+    
+    
     static func /(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
         
         let x = lhs.x / rhs.x

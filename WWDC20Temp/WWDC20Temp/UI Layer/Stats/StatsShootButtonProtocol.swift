@@ -3,7 +3,7 @@ import UIKit
 import SpriteKit
 
 
-protocol StatsShootButtonProtocol {
+protocol StatsShootButtonProtocol: class {
     
     var getDuration: TimeInterval { get }
     

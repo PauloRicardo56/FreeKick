@@ -5,14 +5,13 @@ import SpriteKit
 class ShootButton: SKSpriteNode {
     
     var player: PlayerShootButtonProtocol?
-    var stats: StatsShootButtonProtocol!
+    weak var stats: StatsShootButtonProtocol!
     
     init(color: UIColor, size: CGSize, player: PlayerShootButtonProtocol?) {
         super.init(texture: nil, color: color, size: size)
         
         self.player = player
         self.alpha = 0.3
-        self.isUserInteractionEnabled = true
     }
     
     

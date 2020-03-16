@@ -5,6 +5,8 @@ import SpriteKit
 
 protocol StatsLayerProtocol {
     
+    var setButton: ShootButtonStatsProtocol { get set }
+    
     func loadStat(rect: CGRect) -> UITextField
     
     func drawLine(start: CGPoint, end: CGPoint) -> SKShapeNode
@@ -12,6 +14,11 @@ protocol StatsLayerProtocol {
 
 
 extension PlayerStats: StatsLayerProtocol {
+    
+    var setButton: ShootButtonStatsProtocol {
+        get { return shootButton }
+        set { shootButton = newValue }
+    }
     
     func loadStat(rect: CGRect) -> UITextField {
         

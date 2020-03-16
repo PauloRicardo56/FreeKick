@@ -20,6 +20,8 @@
 		2313B916241989DD009A3CBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2313B914241989DD009A3CBD /* Main.storyboard */; };
 		2313B918241989DF009A3CBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2313B917241989DF009A3CBD /* Assets.xcassets */; };
 		2313B91B241989DF009A3CBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2313B919241989DF009A3CBD /* LaunchScreen.storyboard */; };
+		233FACAA241F026C00DA0FCE /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FACA9241F026C00DA0FCE /* Tags.swift */; };
+		233FACAC241F044100DA0FCE /* StatsBallProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FACAB241F044100DA0FCE /* StatsBallProtocol.swift */; };
 		23516473241BA6D100E19485 /* PlayerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23516472241BA6D100E19485 /* PlayerStats.swift */; };
 		2351647B241BABE700E19485 /* TextFieldLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351647A241BABE700E19485 /* TextFieldLogic.swift */; };
 		2351647D241BACB300E19485 /* ShootButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351647C241BACB300E19485 /* ShootButton.swift */; };
@@ -57,6 +59,8 @@
 		2313B917241989DF009A3CBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2313B91A241989DF009A3CBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2313B91C241989DF009A3CBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		233FACA9241F026C00DA0FCE /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
+		233FACAB241F044100DA0FCE /* StatsBallProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBallProtocol.swift; sourceTree = "<group>"; };
 		23516472241BA6D100E19485 /* PlayerStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStats.swift; sourceTree = "<group>"; };
 		2351647A241BABE700E19485 /* TextFieldLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLogic.swift; sourceTree = "<group>"; };
 		2351647C241BACB300E19485 /* ShootButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootButton.swift; sourceTree = "<group>"; };
@@ -143,6 +147,14 @@
 			path = WWDC20Temp;
 			sourceTree = "<group>";
 		};
+		233FACA8241F025E00DA0FCE /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				233FACA9241F026C00DA0FCE /* Tags.swift */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
 		23516471241BA6AD00E19485 /* UI Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +182,7 @@
 				23516472241BA6D100E19485 /* PlayerStats.swift */,
 				23516480241BAEA100E19485 /* StatsLayerProtocol.swift */,
 				2351649B241D294900E19485 /* StatsShootButtonProtocol.swift */,
+				233FACAB241F044100DA0FCE /* StatsBallProtocol.swift */,
 				2351647A241BABE700E19485 /* TextFieldLogic.swift */,
 			);
 			path = Stats;
@@ -178,6 +191,7 @@
 		23516488241BBDAB00E19485 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				233FACA8241F025E00DA0FCE /* Tags */,
 				235164A1241E980000E19485 /* Points */,
 			);
 			path = Constants;
@@ -186,8 +200,8 @@
 		23516495241BFF3900E19485 /* GameSceneLoad */ = {
 			isa = PBXGroup;
 			children = (
-				23516496241BFF4E00E19485 /* UILoad.swift */,
 				23516498241BFF9700E19485 /* SceneLoad.swift */,
+				23516496241BFF4E00E19485 /* UILoad.swift */,
 			);
 			path = GameSceneLoad;
 			sourceTree = "<group>";
@@ -320,6 +334,7 @@
 				23516494241BFC7100E19485 /* PlayerShootButton.swift in Sources */,
 				230E339F241B0B1600951D11 /* GoalBallProtocol.swift in Sources */,
 				230E339B241ACE8B00951D11 /* CGPointCalc.swift in Sources */,
+				233FACAA241F026C00DA0FCE /* Tags.swift in Sources */,
 				23BFA5D7241AAD24000E90D9 /* PlayerViewModel.swift in Sources */,
 				23516481241BAEA100E19485 /* StatsLayerProtocol.swift in Sources */,
 				2313B911241989DD009A3CBD /* GameScene.swift in Sources */,
@@ -339,6 +354,7 @@
 				235164A0241E97DE00E19485 /* InvalidGoals.swift in Sources */,
 				2351649C241D294900E19485 /* StatsShootButtonProtocol.swift in Sources */,
 				235164A5241EACDB00E19485 /* ValidGoals.swift in Sources */,
+				233FACAC241F044100DA0FCE /* StatsBallProtocol.swift in Sources */,
 				2351647D241BACB300E19485 /* ShootButton.swift in Sources */,
 				23516492241BF0DE00E19485 /* ShootButtonStatsProtocol.swift in Sources */,
 			);

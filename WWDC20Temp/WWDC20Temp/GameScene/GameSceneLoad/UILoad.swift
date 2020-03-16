@@ -4,20 +4,22 @@ import SpriteKit
 
 extension GameScene {
     
-    
-    
     func loadUI() {
         
         uiLayer = UILayer()
         
         var rect = CGRect(x: 800, y: 100, width: scrWidth*0.15, height: scrHeight*0.05)
-        loadStat(rect, playerPoint: Points.PlayerPoints.thigh, statsPoint: Points.StatsPoints.strength)
+        view!.addSubview(self.loadStat(rect, playerPoint: Points.PlayerPoints.thigh, statsPoint: Points.StatsPoints.strength))
         
         rect = CGRect(x: 400, y: 100, width: scrWidth*0.15, height: scrHeight*0.05)
-        loadStat(rect, playerPoint: Points.PlayerPoints.knee, statsPoint: Points.StatsPoints.knee)
+        let str = loadStat(rect, playerPoint: Points.PlayerPoints.knee, statsPoint: Points.StatsPoints.knee)
+        str.tag = Tags.TextFieldTags.knee.rawValue
+        view!.addSubview(str)
 
         rect = CGRect(x: 400, y: 150, width: scrWidth*0.15, height: scrHeight*0.05)
-        loadStat(rect, playerPoint: Points.PlayerPoints.feet, statsPoint: Points.StatsPoints.effect)
+        view!.addSubview(self.loadStat(rect, playerPoint: Points.PlayerPoints.feet, statsPoint: Points.StatsPoints.effect))
+        
+        ballViewModel.setBallStats = uiLayer.getStats
         
         loadButton()
     }
@@ -31,17 +33,16 @@ extension GameScene {
     }
     
     
-    func loadStat(_ rect: CGRect, playerPoint: Points.PlayerPoints, statsPoint: Points.StatsPoints) {
+    func loadStat(_ rect: CGRect, playerPoint: Points.PlayerPoints, statsPoint: Points.StatsPoints) -> UITextField {
         
         let strenghtStat = uiLayer.loadStat(rect: rect)
-        view!.addSubview(strenghtStat)
         
         let playerFrame = playerViewModel.getPlayerFrame()
         let converted = convertPoint(toView: strenghtStat.frame.origin)
         let statusFrame = CGRect(origin: converted, size: strenghtStat.frame.size)
-        
         let strengthLine = uiLayer.drawLine(start: statsPoint.getPos(statusFrame: statusFrame), end: playerPoint.getPos(playerFrame: playerFrame))
         
         addChild(strengthLine)
+        return strenghtStat
     }
 }

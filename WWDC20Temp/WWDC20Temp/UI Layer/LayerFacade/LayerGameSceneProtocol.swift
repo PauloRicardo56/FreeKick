@@ -5,6 +5,8 @@ import SpriteKit
 
 protocol LayerGameSceneProtocol {
     
+    var getStats: StatsBallProtocol! { get }
+    
     func loadStat(rect: CGRect) -> UITextField
     
     func drawLine(start: CGPoint, end: CGPoint) -> SKShapeNode
@@ -14,6 +16,11 @@ protocol LayerGameSceneProtocol {
 
 
 extension UILayer: LayerGameSceneProtocol {
+    
+    var getStats: StatsBallProtocol! {
+        get { return playerStats }
+    }
+    
     
     func loadStat(rect: CGRect) -> UITextField {
         return playerStats.loadStat(rect: rect)
