@@ -20,6 +20,9 @@
 		2313B916241989DD009A3CBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2313B914241989DD009A3CBD /* Main.storyboard */; };
 		2313B918241989DF009A3CBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2313B917241989DF009A3CBD /* Assets.xcassets */; };
 		2313B91B241989DF009A3CBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2313B919241989DF009A3CBD /* LaunchScreen.storyboard */; };
+		2321C7E0242044BD0038E486 /* NewStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321C7DF242044BD0038E486 /* NewStats.swift */; };
+		2321C7E624204D6A0038E486 /* NewTouchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321C7E524204D6A0038E486 /* NewTouchAction.swift */; };
+		2321C7E8242051210038E486 /* NewStatsPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321C7E7242051210038E486 /* NewStatsPoints.swift */; };
 		233FACAA241F026C00DA0FCE /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FACA9241F026C00DA0FCE /* Tags.swift */; };
 		233FACAC241F044100DA0FCE /* StatsBallProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FACAB241F044100DA0FCE /* StatsBallProtocol.swift */; };
 		23516473241BA6D100E19485 /* PlayerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23516472241BA6D100E19485 /* PlayerStats.swift */; };
@@ -59,6 +62,9 @@
 		2313B917241989DF009A3CBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2313B91A241989DF009A3CBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2313B91C241989DF009A3CBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2321C7DF242044BD0038E486 /* NewStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStats.swift; sourceTree = "<group>"; };
+		2321C7E524204D6A0038E486 /* NewTouchAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTouchAction.swift; sourceTree = "<group>"; };
+		2321C7E7242051210038E486 /* NewStatsPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStatsPoints.swift; sourceTree = "<group>"; };
 		233FACA9241F026C00DA0FCE /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
 		233FACAB241F044100DA0FCE /* StatsBallProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBallProtocol.swift; sourceTree = "<group>"; };
 		23516472241BA6D100E19485 /* PlayerStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStats.swift; sourceTree = "<group>"; };
@@ -130,11 +136,11 @@
 		2313B909241989DD009A3CBD /* WWDC20Temp */ = {
 			isa = PBXGroup;
 			children = (
-				2321C7DD241FDCF60038E486 /* ViewModels */,
 				23516488241BBDAB00E19485 /* Constants */,
 				230E3399241AC03500951D11 /* Operands */,
 				23BFA5DB241AB6BB000E90D9 /* GameScene */,
 				23516471241BA6AD00E19485 /* UI Layer */,
+				2321C7DD241FDCF60038E486 /* ViewModels */,
 				2313B90A241989DD009A3CBD /* AppDelegate.swift */,
 				2313B912241989DD009A3CBD /* GameViewController.swift */,
 				2313B914241989DD009A3CBD /* Main.storyboard */,
@@ -155,6 +161,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		2321C7DE242044820038E486 /* NewStats */ = {
+			isa = PBXGroup;
+			children = (
+				2321C7DF242044BD0038E486 /* NewStats.swift */,
+				2321C7E524204D6A0038E486 /* NewTouchAction.swift */,
+			);
+			path = NewStats;
+			sourceTree = "<group>";
+		};
 		233FACA8241F025E00DA0FCE /* Tags */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +183,7 @@
 			children = (
 				2351649A241C01E400E19485 /* LayerFacade */,
 				2351647F241BACC100E19485 /* Stats */,
+				2321C7DE242044820038E486 /* NewStats */,
 				2351647E241BACBA00E19485 /* Shoot */,
 			);
 			path = "UI Layer";
@@ -230,6 +246,7 @@
 				235164A8241EADA700E19485 /* StatsPoints.swift */,
 				2351649F241E97DE00E19485 /* InvalidGoals.swift */,
 				235164A4241EACDB00E19485 /* ValidGoals.swift */,
+				2321C7E7242051210038E486 /* NewStatsPoints.swift */,
 			);
 			path = Points;
 			sourceTree = "<group>";
@@ -336,6 +353,8 @@
 			files = (
 				23516499241BFF9700E19485 /* SceneLoad.swift in Sources */,
 				23BFA5D5241AAD0E000E90D9 /* BallViewModel.swift in Sources */,
+				2321C7E624204D6A0038E486 /* NewTouchAction.swift in Sources */,
+				2321C7E0242044BD0038E486 /* NewStats.swift in Sources */,
 				23516473241BA6D100E19485 /* PlayerStats.swift in Sources */,
 				230E33A3241B0D4C00951D11 /* BallPlayerProtocol.swift in Sources */,
 				23516483241BB07700E19485 /* UILayer.swift in Sources */,
@@ -353,6 +372,7 @@
 				230E33A1241B0D4000951D11 /* BallGameSceneProtocol.swift in Sources */,
 				230E3395241ABD2500951D11 /* GoalViewModel.swift in Sources */,
 				2351647B241BABE700E19485 /* TextFieldLogic.swift in Sources */,
+				2321C7E8242051210038E486 /* NewStatsPoints.swift in Sources */,
 				23516497241BFF4E00E19485 /* UILoad.swift in Sources */,
 				235164A9241EADA700E19485 /* StatsPoints.swift in Sources */,
 				23516487241BB12F00E19485 /* LayerGameSceneProtocol.swift in Sources */,

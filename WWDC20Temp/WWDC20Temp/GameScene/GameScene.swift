@@ -18,6 +18,17 @@ class GameScene: SKScene {
         loadScene()
         loadUI()
         
+        
+        let str = NewStats(size: CGSize(width: self.view!.frame.width*0.45, height: 10), statType: Points.NewStatsPoints.strength, buttonSize: CGSize(width: 40, height: 40))
+        
+        let eff = NewStats(size: CGSize(width: self.view!.frame.width*0.45, height: 10), statType: Points.NewStatsPoints.effect, buttonSize: CGSize(width: 40, height: 40))
+        
+        str.position = CGPoint(x: 50, y: 380)
+        eff.position = CGPoint(x: 50, y: 330)
+        
+        addChild(str)
+        addChild(eff)
+        
 //        setupSketch()
         
         

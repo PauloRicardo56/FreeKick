@@ -15,4 +15,11 @@ extension ShootButton {
         ])
         self.run(freeKick)
     }
+    
+    
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//
+//        let point = touches.first?.location(in: self)
+//        self.position.x = point!.x*0.1 + self.position.x
+//    }
 }
