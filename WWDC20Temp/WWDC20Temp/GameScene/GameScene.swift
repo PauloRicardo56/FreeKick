@@ -46,6 +46,8 @@ class GameScene: SKScene {
 //            point.position.y = CGFloat(randomY)
 //            addChild(point)
 //        }
+        
+        //MARK: SOmeting
     }
     
     

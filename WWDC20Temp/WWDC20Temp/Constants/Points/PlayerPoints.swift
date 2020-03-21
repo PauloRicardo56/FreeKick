@@ -17,6 +17,7 @@ enum Points {
             
             switch self {
             case .feet:
+                
                 x = playerFrame.origin.x + (playerFrame.width*0.3)
                 y = playerFrame.origin.y + (playerFrame.height*0.05)
                 return CGPoint(x: x, y: y)

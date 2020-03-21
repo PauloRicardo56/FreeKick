@@ -24,7 +24,7 @@ extension PlayerStats: StatsShootButtonProtocol {
                 
                 UIView.animate(withDuration: self.fadeOutDuration) { self.activeFields[i].alpha = 0 }
 //                self.activeFields[i].isHidden = true
-                self.activeLines[i].run(SKAction.fadeOut(withDuration: self.fadeOutDuration))
+                self.activeLines[i].run(SKAction.fadeOut(withDuration: self.fadeOutDuration));
             }
         }
         return action
