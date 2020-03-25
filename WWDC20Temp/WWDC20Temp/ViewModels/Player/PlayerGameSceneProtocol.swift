@@ -14,7 +14,7 @@ extension PlayerViewModel: PlayerGameSceneProtocol {
     
     func loadPlayer() -> SKSpriteNode {
         
-        player = SKSpriteNode(color: .blue, size: CGSize(width: 30, height: 110))
+        player = SKSpriteNode(imageNamed: "playerFrame1")
         player.anchorPoint = CGPoint(x: 0.5, y: 0)
         return player
     }

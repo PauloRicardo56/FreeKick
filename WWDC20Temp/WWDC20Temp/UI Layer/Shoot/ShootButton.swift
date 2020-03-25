@@ -12,6 +12,7 @@ class ShootButton: SKSpriteNode {
         
         self.player = player
         self.alpha = 0.3
+        self.isUserInteractionEnabled = true
     }
     
     
