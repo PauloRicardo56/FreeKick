@@ -13,3 +13,42 @@ class GoalViewModel {
         self.goalHeight = goalHeight
     }
 }
+
+
+extension GoalViewModel: GoalToGameScene {
+    
+    var getGoal: SKSpriteNode {
+        get { return goal }
+    }
+    
+    
+    func loadGoal() -> SKSpriteNode {
+        
+        goal = SKSpriteNode(color: .white, size: CGSize(width: goalWidth, height: goalHeight))
+        goal.anchorPoint = CGPoint(x: 0.5, y: 0)
+        return goal
+    }
+}
+
+
+extension GoalViewModel: GoalToBall {
+    
+    func getGoalPoint(side: GoalPointsProtocol) -> CGPoint {
+        
+        let minX = goal.position.x + goalWidth*side.minX
+        let maxX = goal.position.x + goalWidth*side.maxX
+        let minY = goal.position.y + goalHeight*side.minY
+        let maxY = goal.position.y + goalHeight*side.maxY
+        
+        let randomX = Int.random(in: Int(minX)...Int(maxX))
+        let randomY = Int.random(in: Int(minY)...Int(maxY))
+        
+        return CGPoint(x: randomX, y: randomY)
+    }
+    
+    
+    func getGoalY() -> CGFloat {
+        
+        return self.goal.position.y
+    }
+}

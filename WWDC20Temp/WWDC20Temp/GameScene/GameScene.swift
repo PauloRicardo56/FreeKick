@@ -4,10 +4,10 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    var playerViewModel: PlayerGameSceneProtocol!
-    var ballViewModel: BallGameSceneProtocol!
-    var goalViewModel: GoalGameSceneProtocol!
-    var uiLayer: LayerGameSceneProtocol!
+    var playerViewModel: PlayerToGameScene!
+    var ballViewModel: BallToGameScene!
+    var goalViewModel: GoalToGameScene!
+    var uiLayer: LayerToGameScene!
     var scrWidth: CGFloat!
     var scrHeight: CGFloat!
     
@@ -17,17 +17,6 @@ class GameScene: SKScene {
         setup()
         loadScene()
         loadUI()
-        
-        
-        let str = NewStats(size: CGSize(width: self.view!.frame.width*0.45, height: 10), statType: Points.NewStatsPoints.strength, buttonSize: CGSize(width: 40, height: 40))
-        
-        let eff = NewStats(size: CGSize(width: self.view!.frame.width*0.45, height: 10), statType: Points.NewStatsPoints.effect, buttonSize: CGSize(width: 40, height: 40))
-        
-        str.position = CGPoint(x: 50, y: 380)
-        eff.position = CGPoint(x: 50, y: 330)
-        
-        addChild(str)
-        addChild(eff)
         
 //        setupSketch()
         
@@ -54,9 +43,9 @@ class GameScene: SKScene {
     func setup() {
         
         goalViewModel = GoalViewModel(goalHeight: self.frame.height * 0.18)
-        ballViewModel = BallViewModel(goal: goalViewModel as! GoalBallProtocol)
+        ballViewModel = BallViewModel(goal: goalViewModel as! GoalToBall)
         
-        playerViewModel = PlayerViewModel(ballVM: ballViewModel as! BallPlayerProtocol)
+        playerViewModel = PlayerViewModel(ballVM: ballViewModel as! BallToPlayer)
         
         scrWidth = frame.width
         scrHeight = frame.height
@@ -71,3 +60,55 @@ class GameScene: SKScene {
         addChild(background)
     }
 }
+
+
+//MARK: - Scene load
+extension GameScene {
+    func loadScene() {
+        
+        let goal = goalViewModel.loadGoal()
+        goal.position = CGPoint(x: scrWidth*0.45, y: scrHeight*0.49)
+        addChild(goal)
+        
+        let ball = ballViewModel.loadBall()
+        ball.position = CGPoint(x: scrWidth*0.5, y: scrHeight*0.32)
+        addChild(ball)
+        
+        let player = playerViewModel.loadPlayer()
+        player.position = CGPoint(x: scrWidth*0.83, y: scrHeight*0.25)
+        addChild(player)
+    }
+}
+
+
+//MARK: - UI load
+extension GameScene {
+    func loadUI() {
+        
+        self.uiLayer = UILayer()
+        let statsSize = CGSize(width: self.view!.frame.width*0.45, height: 10)
+        
+        let str = uiLayer.loadStat(size: statsSize, statType: .strength)
+        str.position = CGPoint(x: 50, y: 380)
+        ballViewModel.setBallNewStats["str"] = str
+        addChild(str)
+        
+        let eff = uiLayer.loadStat(size: statsSize, statType: .effect)
+        eff.position = CGPoint(x: 50, y: 330)
+        addChild(eff)
+        ballViewModel.setBallNewStats["eff"] = eff
+        
+        self.uiLayer.setButtonStats(stats: [str, eff])
+        
+        loadButton()
+    }
+    
+    
+    func loadButton() {
+        
+        let button = uiLayer.loadButton(color: .green, size: CGSize(width: 80, height: 80), player: playerViewModel as! PlayerToShootButton)
+        button.position = CGPoint(x: 100, y: 100)
+        addChild(button)
+    }
+}
+

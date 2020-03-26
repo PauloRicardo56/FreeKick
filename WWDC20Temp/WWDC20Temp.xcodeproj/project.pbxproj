@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230C7223242BABAD00617214 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C7222242BABAD00617214 /* Images.swift */; };
+		230C7225242BB17C00617214 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C7224242BB17C00617214 /* Protocols.swift */; };
 		230E3395241ABD2500951D11 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E3394241ABD2500951D11 /* GoalViewModel.swift */; };
 		230E339B241ACE8B00951D11 /* CGPointOperands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E339A241ACE8B00951D11 /* CGPointOperands.swift */; };
-		230E339D241B0ABD00951D11 /* GoalGameSceneProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E339C241B0ABD00951D11 /* GoalGameSceneProtocol.swift */; };
-		230E339F241B0B1600951D11 /* GoalBallProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E339E241B0B1600951D11 /* GoalBallProtocol.swift */; };
-		230E33A1241B0D4000951D11 /* BallGameSceneProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E33A0241B0D4000951D11 /* BallGameSceneProtocol.swift */; };
-		230E33A3241B0D4C00951D11 /* BallPlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E33A2241B0D4C00951D11 /* BallPlayerProtocol.swift */; };
-		230E33A5241B0EB400951D11 /* PlayerGameSceneProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E33A4241B0EB400951D11 /* PlayerGameSceneProtocol.swift */; };
+		230E339D241B0ABD00951D11 /* GoalViewModel+GoalToGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E339C241B0ABD00951D11 /* GoalViewModel+GoalToGameScene.swift */; };
+		230E33A1241B0D4000951D11 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E33A0241B0D4000951D11 /* Protocols.swift */; };
+		230E33A5241B0EB400951D11 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E33A4241B0EB400951D11 /* Protocols.swift */; };
 		2313B90B241989DD009A3CBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313B90A241989DD009A3CBD /* AppDelegate.swift */; };
 		2313B911241989DD009A3CBD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313B910241989DD009A3CBD /* GameScene.swift */; };
 		2313B913241989DD009A3CBD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313B912241989DD009A3CBD /* GameViewController.swift */; };
@@ -21,24 +21,13 @@
 		2313B918241989DF009A3CBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2313B917241989DF009A3CBD /* Assets.xcassets */; };
 		2313B91B241989DF009A3CBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2313B919241989DF009A3CBD /* LaunchScreen.storyboard */; };
 		2321C7E0242044BD0038E486 /* NewStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321C7DF242044BD0038E486 /* NewStats.swift */; };
-		2321C7E624204D6A0038E486 /* NewTouchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321C7E524204D6A0038E486 /* NewTouchAction.swift */; };
 		2321C7E8242051210038E486 /* NewStatsPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321C7E7242051210038E486 /* NewStatsPoints.swift */; };
 		233FACAA241F026C00DA0FCE /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FACA9241F026C00DA0FCE /* Tags.swift */; };
-		233FACAC241F044100DA0FCE /* StatsBallProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233FACAB241F044100DA0FCE /* StatsBallProtocol.swift */; };
-		23516473241BA6D100E19485 /* PlayerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23516472241BA6D100E19485 /* PlayerStats.swift */; };
-		2351647B241BABE700E19485 /* TextFieldLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351647A241BABE700E19485 /* TextFieldLogic.swift */; };
 		2351647D241BACB300E19485 /* ShootButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351647C241BACB300E19485 /* ShootButton.swift */; };
-		23516481241BAEA100E19485 /* StatsLayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23516480241BAEA100E19485 /* StatsLayerProtocol.swift */; };
 		23516483241BB07700E19485 /* UILayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23516482241BB07700E19485 /* UILayer.swift */; };
-		23516487241BB12F00E19485 /* LayerGameSceneProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23516486241BB12F00E19485 /* LayerGameSceneProtocol.swift */; };
+		23516487241BB12F00E19485 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23516486241BB12F00E19485 /* Protocols.swift */; };
 		2351648A241BBDC200E19485 /* PlayerPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23516489241BBDC200E19485 /* PlayerPoints.swift */; };
-		23516490241BEE6100E19485 /* TouchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351648F241BEE6100E19485 /* TouchAction.swift */; };
-		23516492241BF0DE00E19485 /* ShootButtonStatsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23516491241BF0DE00E19485 /* ShootButtonStatsProtocol.swift */; };
-		23516494241BFC7100E19485 /* PlayerShootButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23516493241BFC7100E19485 /* PlayerShootButton.swift */; };
-		23516497241BFF4E00E19485 /* UILoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23516496241BFF4E00E19485 /* UILoad.swift */; };
-		23516499241BFF9700E19485 /* SceneLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23516498241BFF9700E19485 /* SceneLoad.swift */; };
-		2351649C241D294900E19485 /* StatsShootButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351649B241D294900E19485 /* StatsShootButtonProtocol.swift */; };
-		2351649E241D2CAB00E19485 /* ShootButtonLayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351649D241D2CAB00E19485 /* ShootButtonLayerProtocol.swift */; };
+		23516492241BF0DE00E19485 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23516491241BF0DE00E19485 /* Protocols.swift */; };
 		235164A0241E97DE00E19485 /* InvalidGoals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351649F241E97DE00E19485 /* InvalidGoals.swift */; };
 		235164A5241EACDB00E19485 /* ValidGoals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235164A4241EACDB00E19485 /* ValidGoals.swift */; };
 		235164A9241EADA700E19485 /* StatsPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235164A8241EADA700E19485 /* StatsPoints.swift */; };
@@ -47,13 +36,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		230C7222242BABAD00617214 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		230C7224242BB17C00617214 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		230E3394241ABD2500951D11 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		230E339A241ACE8B00951D11 /* CGPointOperands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointOperands.swift; sourceTree = "<group>"; };
-		230E339C241B0ABD00951D11 /* GoalGameSceneProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalGameSceneProtocol.swift; sourceTree = "<group>"; };
-		230E339E241B0B1600951D11 /* GoalBallProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalBallProtocol.swift; sourceTree = "<group>"; };
-		230E33A0241B0D4000951D11 /* BallGameSceneProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallGameSceneProtocol.swift; sourceTree = "<group>"; };
-		230E33A2241B0D4C00951D11 /* BallPlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallPlayerProtocol.swift; sourceTree = "<group>"; };
-		230E33A4241B0EB400951D11 /* PlayerGameSceneProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerGameSceneProtocol.swift; sourceTree = "<group>"; };
+		230E339C241B0ABD00951D11 /* GoalViewModel+GoalToGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoalViewModel+GoalToGameScene.swift"; sourceTree = "<group>"; };
+		230E33A0241B0D4000951D11 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		230E33A4241B0EB400951D11 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		2313B907241989DD009A3CBD /* WWDC20Temp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WWDC20Temp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2313B90A241989DD009A3CBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2313B910241989DD009A3CBD /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -63,24 +52,13 @@
 		2313B91A241989DF009A3CBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2313B91C241989DF009A3CBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2321C7DF242044BD0038E486 /* NewStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStats.swift; sourceTree = "<group>"; };
-		2321C7E524204D6A0038E486 /* NewTouchAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTouchAction.swift; sourceTree = "<group>"; };
 		2321C7E7242051210038E486 /* NewStatsPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStatsPoints.swift; sourceTree = "<group>"; };
 		233FACA9241F026C00DA0FCE /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
-		233FACAB241F044100DA0FCE /* StatsBallProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBallProtocol.swift; sourceTree = "<group>"; };
-		23516472241BA6D100E19485 /* PlayerStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStats.swift; sourceTree = "<group>"; };
-		2351647A241BABE700E19485 /* TextFieldLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLogic.swift; sourceTree = "<group>"; };
 		2351647C241BACB300E19485 /* ShootButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootButton.swift; sourceTree = "<group>"; };
-		23516480241BAEA100E19485 /* StatsLayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsLayerProtocol.swift; sourceTree = "<group>"; };
 		23516482241BB07700E19485 /* UILayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILayer.swift; sourceTree = "<group>"; };
-		23516486241BB12F00E19485 /* LayerGameSceneProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerGameSceneProtocol.swift; sourceTree = "<group>"; };
+		23516486241BB12F00E19485 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		23516489241BBDC200E19485 /* PlayerPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPoints.swift; sourceTree = "<group>"; };
-		2351648F241BEE6100E19485 /* TouchAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchAction.swift; sourceTree = "<group>"; };
-		23516491241BF0DE00E19485 /* ShootButtonStatsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootButtonStatsProtocol.swift; sourceTree = "<group>"; };
-		23516493241BFC7100E19485 /* PlayerShootButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerShootButton.swift; sourceTree = "<group>"; };
-		23516496241BFF4E00E19485 /* UILoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILoad.swift; sourceTree = "<group>"; };
-		23516498241BFF9700E19485 /* SceneLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLoad.swift; sourceTree = "<group>"; };
-		2351649B241D294900E19485 /* StatsShootButtonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsShootButtonProtocol.swift; sourceTree = "<group>"; };
-		2351649D241D2CAB00E19485 /* ShootButtonLayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootButtonLayerProtocol.swift; sourceTree = "<group>"; };
+		23516491241BF0DE00E19485 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		2351649F241E97DE00E19485 /* InvalidGoals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidGoals.swift; sourceTree = "<group>"; };
 		235164A4241EACDB00E19485 /* ValidGoals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidGoals.swift; sourceTree = "<group>"; };
 		235164A8241EADA700E19485 /* StatsPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsPoints.swift; sourceTree = "<group>"; };
@@ -99,12 +77,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		230C7221242BAB9F00617214 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				230C7222242BABAD00617214 /* Images.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		230C7228242D4EC000617214 /* Goalkeeper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Goalkeeper;
+			sourceTree = "<group>";
+		};
 		230E3393241ABD1A00951D11 /* Goal */ = {
 			isa = PBXGroup;
 			children = (
 				230E3394241ABD2500951D11 /* GoalViewModel.swift */,
-				230E339C241B0ABD00951D11 /* GoalGameSceneProtocol.swift */,
-				230E339E241B0B1600951D11 /* GoalBallProtocol.swift */,
+				230E339C241B0ABD00951D11 /* GoalViewModel+GoalToGameScene.swift */,
 			);
 			path = Goal;
 			sourceTree = "<group>";
@@ -157,6 +149,7 @@
 				23BFA5D1241AACDE000E90D9 /* Player */,
 				23BFA5D3241AACED000E90D9 /* Ball */,
 				230E3393241ABD1A00951D11 /* Goal */,
+				230C7228242D4EC000617214 /* Goalkeeper */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -165,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				2321C7DF242044BD0038E486 /* NewStats.swift */,
-				2321C7E524204D6A0038E486 /* NewTouchAction.swift */,
+				230C7224242BB17C00617214 /* Protocols.swift */,
 			);
 			path = NewStats;
 			sourceTree = "<group>";
@@ -182,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				2351649A241C01E400E19485 /* LayerFacade */,
-				2351647F241BACC100E19485 /* Stats */,
 				2321C7DE242044820038E486 /* NewStats */,
 				2351647E241BACBA00E19485 /* Shoot */,
 			);
@@ -193,48 +185,26 @@
 			isa = PBXGroup;
 			children = (
 				2351647C241BACB300E19485 /* ShootButton.swift */,
-				23516491241BF0DE00E19485 /* ShootButtonStatsProtocol.swift */,
-				2351649D241D2CAB00E19485 /* ShootButtonLayerProtocol.swift */,
-				2351648F241BEE6100E19485 /* TouchAction.swift */,
+				23516491241BF0DE00E19485 /* Protocols.swift */,
 			);
 			path = Shoot;
-			sourceTree = "<group>";
-		};
-		2351647F241BACC100E19485 /* Stats */ = {
-			isa = PBXGroup;
-			children = (
-				23516472241BA6D100E19485 /* PlayerStats.swift */,
-				23516480241BAEA100E19485 /* StatsLayerProtocol.swift */,
-				2351649B241D294900E19485 /* StatsShootButtonProtocol.swift */,
-				233FACAB241F044100DA0FCE /* StatsBallProtocol.swift */,
-				2351647A241BABE700E19485 /* TextFieldLogic.swift */,
-			);
-			path = Stats;
 			sourceTree = "<group>";
 		};
 		23516488241BBDAB00E19485 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				230C7221242BAB9F00617214 /* Images */,
 				233FACA8241F025E00DA0FCE /* Tags */,
 				235164A1241E980000E19485 /* Points */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		23516495241BFF3900E19485 /* GameSceneLoad */ = {
-			isa = PBXGroup;
-			children = (
-				23516498241BFF9700E19485 /* SceneLoad.swift */,
-				23516496241BFF4E00E19485 /* UILoad.swift */,
-			);
-			path = GameSceneLoad;
-			sourceTree = "<group>";
-		};
 		2351649A241C01E400E19485 /* LayerFacade */ = {
 			isa = PBXGroup;
 			children = (
 				23516482241BB07700E19485 /* UILayer.swift */,
-				23516486241BB12F00E19485 /* LayerGameSceneProtocol.swift */,
+				23516486241BB12F00E19485 /* Protocols.swift */,
 			);
 			path = LayerFacade;
 			sourceTree = "<group>";
@@ -255,8 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				23BFA5D6241AAD24000E90D9 /* PlayerViewModel.swift */,
-				230E33A4241B0EB400951D11 /* PlayerGameSceneProtocol.swift */,
-				23516493241BFC7100E19485 /* PlayerShootButton.swift */,
+				230E33A4241B0EB400951D11 /* Protocols.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -265,8 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				23BFA5D4241AAD0E000E90D9 /* BallViewModel.swift */,
-				230E33A0241B0D4000951D11 /* BallGameSceneProtocol.swift */,
-				230E33A2241B0D4C00951D11 /* BallPlayerProtocol.swift */,
+				230E33A0241B0D4000951D11 /* Protocols.swift */,
 			);
 			path = Ball;
 			sourceTree = "<group>";
@@ -275,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				2313B910241989DD009A3CBD /* GameScene.swift */,
-				23516495241BFF3900E19485 /* GameSceneLoad */,
 			);
 			path = GameScene;
 			sourceTree = "<group>";
@@ -351,40 +318,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23516499241BFF9700E19485 /* SceneLoad.swift in Sources */,
 				23BFA5D5241AAD0E000E90D9 /* BallViewModel.swift in Sources */,
-				2321C7E624204D6A0038E486 /* NewTouchAction.swift in Sources */,
 				2321C7E0242044BD0038E486 /* NewStats.swift in Sources */,
-				23516473241BA6D100E19485 /* PlayerStats.swift in Sources */,
-				230E33A3241B0D4C00951D11 /* BallPlayerProtocol.swift in Sources */,
 				23516483241BB07700E19485 /* UILayer.swift in Sources */,
-				23516494241BFC7100E19485 /* PlayerShootButton.swift in Sources */,
-				230E339F241B0B1600951D11 /* GoalBallProtocol.swift in Sources */,
+				230C7225242BB17C00617214 /* Protocols.swift in Sources */,
+				230C7223242BABAD00617214 /* Images.swift in Sources */,
 				230E339B241ACE8B00951D11 /* CGPointOperands.swift in Sources */,
 				233FACAA241F026C00DA0FCE /* Tags.swift in Sources */,
 				23BFA5D7241AAD24000E90D9 /* PlayerViewModel.swift in Sources */,
-				23516481241BAEA100E19485 /* StatsLayerProtocol.swift in Sources */,
 				2313B911241989DD009A3CBD /* GameScene.swift in Sources */,
-				23516490241BEE6100E19485 /* TouchAction.swift in Sources */,
 				2313B913241989DD009A3CBD /* GameViewController.swift in Sources */,
-				2351649E241D2CAB00E19485 /* ShootButtonLayerProtocol.swift in Sources */,
 				2351648A241BBDC200E19485 /* PlayerPoints.swift in Sources */,
-				230E33A1241B0D4000951D11 /* BallGameSceneProtocol.swift in Sources */,
+				230E33A1241B0D4000951D11 /* Protocols.swift in Sources */,
 				230E3395241ABD2500951D11 /* GoalViewModel.swift in Sources */,
-				2351647B241BABE700E19485 /* TextFieldLogic.swift in Sources */,
 				2321C7E8242051210038E486 /* NewStatsPoints.swift in Sources */,
-				23516497241BFF4E00E19485 /* UILoad.swift in Sources */,
 				235164A9241EADA700E19485 /* StatsPoints.swift in Sources */,
-				23516487241BB12F00E19485 /* LayerGameSceneProtocol.swift in Sources */,
+				23516487241BB12F00E19485 /* Protocols.swift in Sources */,
 				2313B90B241989DD009A3CBD /* AppDelegate.swift in Sources */,
-				230E33A5241B0EB400951D11 /* PlayerGameSceneProtocol.swift in Sources */,
-				230E339D241B0ABD00951D11 /* GoalGameSceneProtocol.swift in Sources */,
+				230E33A5241B0EB400951D11 /* Protocols.swift in Sources */,
+				230E339D241B0ABD00951D11 /* GoalViewModel+GoalToGameScene.swift in Sources */,
 				235164A0241E97DE00E19485 /* InvalidGoals.swift in Sources */,
-				2351649C241D294900E19485 /* StatsShootButtonProtocol.swift in Sources */,
 				235164A5241EACDB00E19485 /* ValidGoals.swift in Sources */,
-				233FACAC241F044100DA0FCE /* StatsBallProtocol.swift in Sources */,
 				2351647D241BACB300E19485 /* ShootButton.swift in Sources */,
-				23516492241BF0DE00E19485 /* ShootButtonStatsProtocol.swift in Sources */,
+				23516492241BF0DE00E19485 /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
