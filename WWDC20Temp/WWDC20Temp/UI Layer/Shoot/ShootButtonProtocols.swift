@@ -1,6 +1,3 @@
-import Foundation
-
-
 protocol ShootButtonToStats {
     
     func turnActive()

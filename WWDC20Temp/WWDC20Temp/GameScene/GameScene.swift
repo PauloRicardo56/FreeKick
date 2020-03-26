@@ -6,7 +6,7 @@ class GameScene: SKScene {
     
     var playerViewModel: PlayerToGameScene!
     var ballViewModel: BallToGameScene!
-    var goalViewModel: GoalToGameScene!
+    var goalViewModel: (GoalToGameScene & GoalToGoalkeeper)!
     var uiLayer: LayerToGameScene!
     var scrWidth: CGFloat!
     var scrHeight: CGFloat!
@@ -65,7 +65,6 @@ class GameScene: SKScene {
 //MARK: - Scene load
 extension GameScene {
     func loadScene() {
-        
         let goal = goalViewModel.loadGoal()
         goal.position = CGPoint(x: scrWidth*0.45, y: scrHeight*0.49)
         addChild(goal)
@@ -77,6 +76,10 @@ extension GameScene {
         let player = playerViewModel.loadPlayer()
         player.position = CGPoint(x: scrWidth*0.83, y: scrHeight*0.25)
         addChild(player)
+        
+        let goalkeeper = Goalkeeper(goal: goalViewModel)
+        goalkeeper.position = CGPoint(x: -goal.frame.width*0.12, y: 0)
+        goal.addChild(goalkeeper)
     }
 }
 

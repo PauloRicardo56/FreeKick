@@ -1,4 +1,3 @@
-import Foundation
 import SpriteKit
 
 
@@ -16,4 +15,10 @@ protocol GoalToBall {
     func getGoalPoint(side: GoalPointsProtocol) -> CGPoint
     
     func getGoalY() -> CGFloat
+}
+
+
+protocol GoalToGoalkeeper {
+    
+    var goalFrame: CGRect  { get }
 }

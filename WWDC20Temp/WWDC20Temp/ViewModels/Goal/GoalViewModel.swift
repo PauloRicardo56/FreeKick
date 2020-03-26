@@ -18,7 +18,7 @@ class GoalViewModel {
 extension GoalViewModel: GoalToGameScene {
     
     var getGoal: SKSpriteNode {
-        get { return goal }
+        return goal
     }
     
     
@@ -48,7 +48,14 @@ extension GoalViewModel: GoalToBall {
     
     
     func getGoalY() -> CGFloat {
-        
         return self.goal.position.y
+    }
+}
+
+
+extension GoalViewModel: GoalToGoalkeeper {
+    
+    var goalFrame: CGRect {
+        return self.goal.frame
     }
 }
