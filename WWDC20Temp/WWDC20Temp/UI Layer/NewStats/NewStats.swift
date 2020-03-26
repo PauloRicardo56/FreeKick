@@ -3,7 +3,6 @@ import SpriteKit
 
 
 class NewStats: SKSpriteNode {
-    
     var slideButton: SKSpriteNode!
     var fadeOutDuration: TimeInterval = 1.2
     
@@ -11,42 +10,28 @@ class NewStats: SKSpriteNode {
         super.init(texture: nil, color: .black, size: size)
         
         slideButton = SKSpriteNode(color: statType.color, size: buttonSize)
-        slideButton.position = CGPoint(x: self.frame.width*statType.multiplier, y: 0)
+        slideButton.position = .zero
+        slideButton.run(moveLeftRightAction(left: 0, right: self.size.width, duration: statType.duration))
         
         self.isUserInteractionEnabled = true
         self.anchorPoint = CGPoint(x: 0, y: 0.5)
         self.addChild(slideButton)
     }
     
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        let point = touches.first?.location(in: self)
-        let newPos = point!.x
-        if newPos <= self.frame.width && newPos >= 0 {
-            self.slideButton.position.x = newPos
-        }
-        
-        print(Int(self.slideButton.position.x/self.size.width*100))
     }
 }
 
 
 extension NewStats: NewStatsToBall {
-    
     var getValue: Int {
-        get { return Int(self.slideButton.position.x/self.size.width*100) }
+        return Int(self.slideButton.position.x/self.size.width*100)
     }
 }
 
 
 extension NewStats: StatsToShootButton {
-    
     var getDuration: TimeInterval {
         get { fadeOutDuration }
     }
@@ -55,5 +40,9 @@ extension NewStats: StatsToShootButton {
         return SKAction.run {
             self.run(SKAction.fadeOut(withDuration: self.fadeOutDuration))
         }
+    }
+    
+    func stopSlider() {
+        self.slideButton.removeAllActions()
     }
 }

@@ -8,8 +8,10 @@ protocol NewStatsToBall {
 
 
 protocol StatsToShootButton: class {
-    
+    ///Fade out duration
     var getDuration: TimeInterval { get }
     
     func fadeOutAnimation() -> SKAction
+    
+    func stopSlider()
 }

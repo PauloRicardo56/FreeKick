@@ -78,7 +78,7 @@ extension GameScene {
         addChild(player)
         
         let goalkeeper = Goalkeeper(goal: goalViewModel)
-        goalkeeper.position = CGPoint(x: -goal.frame.width*0.12, y: 0)
+        goalkeeper.position = CGPoint(x: -goal.frame.width*0.4, y: 0)
         goal.addChild(goalkeeper)
     }
 }
