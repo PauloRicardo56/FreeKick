@@ -1,9 +1,7 @@
-import Foundation
 import SpriteKit
 
 
 class ShootButton: SKSpriteNode {
-    
     var player: PlayerToShootButton?
     var stats: [StatsToShootButton]!
     var pressed = false
@@ -16,14 +14,11 @@ class ShootButton: SKSpriteNode {
         self.isUserInteractionEnabled = true
     }
     
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         if pressed {
             stats[1].stopSlider()
             let interval = SKAction.wait(forDuration: stats[0].getDuration)
@@ -42,15 +37,13 @@ class ShootButton: SKSpriteNode {
     }
 }
 
-
+// MARK: - ShootButtonToStats
 extension ShootButton: ShootButtonToStats {
-    
     func turnActive() {
         // TODO: Activate animation
         self.isUserInteractionEnabled = true
         self.alpha = 1
     }
-    
     
     func turnInactive() {
         // TODO: Deactivate animation
@@ -59,9 +52,8 @@ extension ShootButton: ShootButtonToStats {
     }
 }
 
-
+// MARK: - ShootButtonToLayer
 extension ShootButton: ShootButtonToLayer {
-    
     var setStats: [StatsToShootButton]! {
         get { return stats }
         set { stats = newValue }

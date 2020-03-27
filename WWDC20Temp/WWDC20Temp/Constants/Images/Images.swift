@@ -1,10 +1,5 @@
-import Foundation
-
-
 enum Images {
-    
     enum Player: String, CaseIterable {
-        
         case frame1 = "playerFrame1"
         case frame2 = "playerFrame2"
         case frame3 = "playerFrame3"
@@ -19,9 +14,7 @@ enum Images {
         case frame12 = "playerFrame12"
     }
     
-    
     enum Ball: String, CaseIterable {
-        
         case frame1 = "ballFrame1"
         case frame2 = "ballFrame2"
         case frame3 = "ballFrame3"

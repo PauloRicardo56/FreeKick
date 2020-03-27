@@ -1,4 +1,3 @@
-import Foundation
 import SpriteKit
 
 
@@ -23,14 +22,14 @@ class NewStats: SKSpriteNode {
     }
 }
 
-
+// MARK: - NewStatsToBall
 extension NewStats: NewStatsToBall {
     var getValue: Int {
         return Int(self.slideButton.position.x/self.size.width*100)
     }
 }
 
-
+// MARK: - StatsToShootButton
 extension NewStats: StatsToShootButton {
     var getDuration: TimeInterval {
         get { fadeOutDuration }

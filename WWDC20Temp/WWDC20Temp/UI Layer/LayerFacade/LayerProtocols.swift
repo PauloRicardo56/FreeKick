@@ -3,7 +3,6 @@ import SpriteKit
 
 
 protocol LayerToGameScene {
-    
     func loadStat(size: CGSize, statType: Points.NewStatsPoints) -> NewStats
     
     func loadButton(color: UIColor, size: CGSize, player: PlayerToShootButton) -> SKSpriteNode
