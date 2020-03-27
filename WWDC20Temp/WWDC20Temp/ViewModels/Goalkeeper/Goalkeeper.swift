@@ -1,7 +1,7 @@
 import SpriteKit
 
 
-class Goalkeeper: SKSpriteNode {
+class Goalkeeper: SKSpriteNode, Moveable {
     var goal: GoalToGoalkeeper!
     
     init(goal: GoalToGoalkeeper) {
@@ -25,12 +25,4 @@ class Goalkeeper: SKSpriteNode {
         
         self.run(moveLeftRightAction(left: left, right: right, duration: 1.5))
     }
-}
-
-func moveLeftRightAction(left: CGFloat, right: CGFloat, duration: Double) -> SKAction {
-    let runLeft = SKAction.moveTo(x: left, duration: duration)
-    let runRight = SKAction.moveTo(x: right, duration: duration)
-    let sequence = SKAction.sequence([runRight, runLeft])
-    
-    return SKAction.repeatForever(sequence)
 }

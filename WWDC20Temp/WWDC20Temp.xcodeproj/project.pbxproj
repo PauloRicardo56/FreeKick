@@ -28,6 +28,7 @@
 		2351648A241BBDC200E19485 /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23516489241BBDC200E19485 /* Points.swift */; };
 		23516492241BF0DE00E19485 /* ShootButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23516491241BF0DE00E19485 /* ShootButtonProtocols.swift */; };
 		235164A0241E97DE00E19485 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351649F241E97DE00E19485 /* Protocols.swift */; };
+		238279BB242E9893001EEE55 /* Moveable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238279BA242E9893001EEE55 /* Moveable.swift */; };
 		23BFA5D5241AAD0E000E90D9 /* BallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BFA5D4241AAD0E000E90D9 /* BallViewModel.swift */; };
 		23BFA5D7241AAD24000E90D9 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BFA5D6241AAD24000E90D9 /* PlayerViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		23516489241BBDC200E19485 /* Points.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = Points.swift; sourceTree = "<group>"; tabWidth = 4; };
 		23516491241BF0DE00E19485 /* ShootButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootButtonProtocols.swift; sourceTree = "<group>"; };
 		2351649F241E97DE00E19485 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		238279BA242E9893001EEE55 /* Moveable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moveable.swift; sourceTree = "<group>"; };
 		23BFA5D4241AAD0E000E90D9 /* BallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallViewModel.swift; sourceTree = "<group>"; };
 		23BFA5D6241AAD24000E90D9 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 		2313B909241989DD009A3CBD /* WWDC20Temp */ = {
 			isa = PBXGroup;
 			children = (
+				238279B8242E9884001EEE55 /* Utils */,
 				23516488241BBDAB00E19485 /* Constants */,
 				230E3399241AC03500951D11 /* Operands */,
 				23BFA5DB241AB6BB000E90D9 /* GameScene */,
@@ -202,6 +205,22 @@
 				2351649F241E97DE00E19485 /* Protocols.swift */,
 			);
 			path = Points;
+			sourceTree = "<group>";
+		};
+		238279B8242E9884001EEE55 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				238279B9242E9888001EEE55 /* Protocols */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		238279B9242E9888001EEE55 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				238279BA242E9893001EEE55 /* Moveable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		23BFA5D1241AACDE000E90D9 /* Player */ = {
@@ -321,6 +340,7 @@
 				235164A0241E97DE00E19485 /* Protocols.swift in Sources */,
 				2351647D241BACB300E19485 /* ShootButton.swift in Sources */,
 				23516492241BF0DE00E19485 /* ShootButtonProtocols.swift in Sources */,
+				238279BB242E9893001EEE55 /* Moveable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

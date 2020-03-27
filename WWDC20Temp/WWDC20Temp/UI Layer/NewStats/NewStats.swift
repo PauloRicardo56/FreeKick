@@ -1,7 +1,7 @@
 import SpriteKit
 
 
-class NewStats: SKSpriteNode {
+class NewStats: SKSpriteNode, Moveable {
     var slideButton: SKSpriteNode!
     var fadeOutDuration: TimeInterval = 1.2
     

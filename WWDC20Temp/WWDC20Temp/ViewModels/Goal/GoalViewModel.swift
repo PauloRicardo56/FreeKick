@@ -11,7 +11,7 @@ class GoalViewModel {
     }
 }
 
-// MARK: -GoalToGameScene
+// MARK: - GoalToGameScene
 extension GoalViewModel: GoalToGameScene {
     var getGoal: SKSpriteNode {
         return goal
