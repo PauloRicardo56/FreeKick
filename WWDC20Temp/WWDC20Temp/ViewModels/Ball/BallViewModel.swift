@@ -5,6 +5,7 @@ class BallViewModel {
     var goal: GoalToBall!
     var ball: SKSpriteNode!
     var stats: [String: NewStatsToBall] = [:]
+    var goalPoint: CGPoint!
     
     init(goal: GoalToBall) {
         self.goal = goal
@@ -31,34 +32,33 @@ extension BallViewModel: BallToPlayer {
     func shootBall() -> SKAction {
         let strValue = self.stats["str"]!.getValue
         let effValue = self.stats["eff"]!.getValue
-        var goalPoint: CGPoint!
         var isGoal = false
         
         let shootBall = SKAction.run {
-            let goalsPoints = Points.GoalsPoints.self
+            let goalPointsConstant = Points.GoalsPoints.self
             let path: CGMutablePath
 
             if effValue <= strValue {
                 if effValue >= 12 && strValue <= 35 {
                     // MARK: Right Goal
                     isGoal = true
-                    goalPoint = self.goal.getGoalPoint(side: goalsPoints.ValidRight())
-                    path = self.makePath(goalPoint: goalsPoints.ValidRight())
+                    self.goalPoint = self.goal.getGoalPoint(side: goalPointsConstant.ValidRight())
+                    path = self.makePath(constant: goalPointsConstant.ValidRight())
                     
                 } else if effValue >= 81 && strValue >= 89 {
                     // MARK: Left Goal
                     isGoal = true
-                    goalPoint = self.goal.getGoalPoint(side: goalsPoints.ValidLeft())
-                    path = self.makePath(goalPoint: goalsPoints.ValidLeft())
+                    self.goalPoint = self.goal.getGoalPoint(side: goalPointsConstant.ValidLeft())
+                    path = self.makePath(constant: goalPointsConstant.ValidLeft())
                     
                 } else {
                     // MARK: Left miss
-                    path = self.makePath(goalPoint: goalsPoints.InvalidLeft())
+                    path = self.makePath(constant: goalPointsConstant.InvalidLeft())
                 }
                 
             } else {
                 // MARK: Right miss
-                path = self.makePath(goalPoint: goalsPoints.ValidRight())
+                path = self.makePath(constant: goalPointsConstant.ValidRight())
 //                goalPoint = self.goal.getGoalPoint(side: Points.GoalsPoints.InvalidRight())
 //                let controlPoint = (goalPoint | self.getBallPosition())
 //                path.addQuadCurve(to: goalPoint, control: (controlPoint ↑ 300) | (controlPoint ← 300))
@@ -68,7 +68,7 @@ extension BallViewModel: BallToPlayer {
             follow.timingMode = .easeOut
             
             if isGoal {
-                let bottomGoal = CGPoint(x: goalPoint.x, y: self.goal.getGoalY())
+                let bottomGoal = CGPoint(x: self.goalPoint.x, y: self.goal.getGoalY())
                 let fall = SKAction.move(to: bottomGoal, duration: 1.2)
                 
                 self.ball.run(SKAction.sequence([follow, fall]))
@@ -82,14 +82,14 @@ extension BallViewModel: BallToPlayer {
         return ball.position
     }
     
-    func makePath(goalPoint: GoalPointsProtocol) -> CGMutablePath {
+    func makePath(constant: GoalPointsProtocol) -> CGMutablePath {
         let path = CGMutablePath()
         path.move(to: self.getBallPosition())
         
-        let goal = self.goal.getGoalPoint(side: goalPoint)
-        let controlPoint = (goal | self.getBallPosition())
+        goalPoint = self.goal.getGoalPoint(side: constant)
+        let controlPoint = (goalPoint | self.getBallPosition())
         
-        path.addQuadCurve(to: goal, control: goalPoint.control(controlPoint: controlPoint))
+        path.addQuadCurve(to: goalPoint, control: constant.control(controlPoint: controlPoint))
         
         return path
     }
