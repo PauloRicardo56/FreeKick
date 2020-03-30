@@ -18,7 +18,8 @@ extension GoalViewModel: GoalToGameScene {
     }
     
     func loadGoal() -> SKSpriteNode {
-        goal = SKSpriteNode(color: .white, size: CGSize(width: goalWidth, height: goalHeight))
+        goal = SKSpriteNode(imageNamed: "goal")
+        goal.setScale(1.85)
         goal.anchorPoint = CGPoint(x: 0.5, y: 0)
         
         return goal
@@ -40,13 +41,23 @@ extension GoalViewModel: GoalToBall {
     }
     
     func getGoalY() -> CGFloat {
-        return self.goal.position.y
+        return goal.position.y + goal.position.y * 0.02
     }
 }
 
 // MARK: - GoalToGoalkeeper
 extension GoalViewModel: GoalToGoalkeeper {
-    var goalFrame: CGRect {
-        return self.goal.frame
+    var size: CGSize {
+        return goal.frame.size
+    }
+    var position: CGPoint {
+        return goal.position
+    }
+}
+
+// MARK: GoalToBackground
+extension GoalViewModel: GoalToBackground {
+    func move(isLeft: Bool) {
+        goal.position.x += isLeft ? 70 : -70
     }
 }

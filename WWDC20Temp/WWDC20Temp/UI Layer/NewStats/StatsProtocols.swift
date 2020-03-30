@@ -3,6 +3,8 @@ import SpriteKit
 
 protocol NewStatsToBall {
     var getValue: Int { get }
+    
+    var contact: Bool { get }
 }
 
 protocol StatsToShootButton: class {
@@ -12,4 +14,10 @@ protocol StatsToShootButton: class {
     func fadeOutAnimation() -> SKAction
     
     func stopSlider()
+}
+
+protocol NewStatsToDirection {
+    var width: CGFloat { get }
+    
+    func moveGreenBar(isLeft: Bool)
 }

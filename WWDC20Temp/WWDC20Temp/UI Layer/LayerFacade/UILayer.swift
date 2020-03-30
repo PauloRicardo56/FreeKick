@@ -13,8 +13,8 @@ class UILayer {
 
 // MARK: - LayerToGameScene
 extension UILayer: LayerToGameScene {
-    func loadStat(size: CGSize, statType: Points.NewStatsPoints) -> NewStats {
-        let stat = NewStats(size: size, statType: statType, buttonSize: CGSize(width: 40, height: 40))
+    func loadStat(statType: Images.Stat.StatIndicator) -> NewStats {
+        let stat = NewStats(statType: statType)
         
         return stat
     }

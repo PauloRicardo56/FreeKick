@@ -1,0 +1,3 @@
+protocol GoalkeeperToBackground {
+    func resetAnimation()
+}

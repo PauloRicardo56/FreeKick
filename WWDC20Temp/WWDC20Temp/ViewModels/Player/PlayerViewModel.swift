@@ -7,7 +7,7 @@ class PlayerViewModel {
     let playerSpeed = 1.5
     
     init(ballVM: BallToPlayer) {
-        self.ballViewModel = ballVM
+        ballViewModel = ballVM
     }
     
     func animate() -> SKAction {
@@ -27,7 +27,7 @@ class PlayerViewModel {
 // MARK: - PlayerToGameScene
 extension PlayerViewModel: PlayerToGameScene {
     func loadPlayer() -> SKSpriteNode {
-        player = SKSpriteNode(imageNamed: "playerFrame1")
+        player = SKSpriteNode(imageNamed: Images.Player.frame1.rawValue)
         player.anchorPoint = CGPoint(x: 0.5, y: 0)
         
         return player

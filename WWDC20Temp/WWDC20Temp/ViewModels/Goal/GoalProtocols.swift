@@ -15,5 +15,11 @@ protocol GoalToBall {
 }
 
 protocol GoalToGoalkeeper {
-    var goalFrame: CGRect  { get }
+    var size: CGSize  { get }
+    
+    var position: CGPoint  { get }
+}
+
+protocol GoalToBackground {
+    func move(isLeft: Bool)
 }

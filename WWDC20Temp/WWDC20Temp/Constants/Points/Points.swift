@@ -2,7 +2,7 @@ import SpriteKit
 
 
 enum Points {
-    //MARK: - Player points
+    // MARK: - Player points
     enum PlayerPoints {
         case feet, thigh, knee
 
@@ -29,13 +29,13 @@ enum Points {
         }
     }
     
-    //MARK: - Goal points
+    // MARK: - Goal points
     enum GoalsPoints {
         struct InvalidLeft: GoalPointsProtocol {
             var minX: CGFloat { return -0.75 }
             var maxX: CGFloat { return -0.53 }
-            var minY: CGFloat { return  0.06 }
-            var maxY: CGFloat { return  1.50 }
+            var minY: CGFloat { return  0.60 }
+            var maxY: CGFloat { return  1.80 }
             
             func control(controlPoint: CGPoint) -> CGPoint {
                 return (controlPoint + 100) | (controlPoint ↑ 500)
@@ -43,10 +43,10 @@ enum Points {
         }
         
         struct InvalidRight: GoalPointsProtocol {
-            var minX: CGFloat { return 0.00 }
-            var maxX: CGFloat { return 0.48 }
+            var minX: CGFloat { return 0.30 }
+            var maxX: CGFloat { return 0.80 }
             var minY: CGFloat { return 1.10 }
-            var maxY: CGFloat { return 1.50 }
+            var maxY: CGFloat { return 1.80 }
             
             func control(controlPoint: CGPoint) -> CGPoint {
                 return (controlPoint ↑ 300) | (controlPoint ← 300)
@@ -76,33 +76,50 @@ enum Points {
         }
     }
     
-    //MARK: - Stats points
+    // MARK: - Stats points
     enum NewStatsPoints {
-        case strength, effect
+        enum StatsAnimation {
+            case strength, effect
+            
+            var duration: Double {
+                get {
+                    switch self {
+                    case .strength: return 2
+                    case .effect: return 1.3
+                    }
+                }
+            }
+        }
         
-        var multiplier: CGFloat {
-            get {
-                switch self {
-                case .strength: return 0.8
-                case .effect: return 0.2
-                }
-            }
-        }
-        var color: UIColor {
-            get {
-                switch self {
-                case .strength: return .red
-                case .effect: return .green
-                }
-            }
-        }
-        var duration: Double {
-            get {
-                switch self {
-                case .strength: return 2
-                case .effect: return 1.3
-                }
-            }
-        }
+//        enum GreenBarPoints {
+//            case position0, position1, position2, position3,
+//            position4, position5, position6, position7,
+//            position8, position9
+//
+//            var width: CGFloat {
+//                switch self {
+//                case .position0:
+//                    <#code#>
+//                case .position1:
+//                    <#code#>
+//                case .position2:
+//                    <#code#>
+//                case .position3:
+//                    <#code#>
+//                case .position4:
+//                    <#code#>
+//                case .position5:
+//                    <#code#>
+//                case .position6:
+//                    <#code#>
+//                case .position7:
+//                    <#code#>
+//                case .position8:
+//                    <#code#>
+//                case .position9:
+//                    <#code#>
+//                }
+//            }
+//        }
     }
 }

@@ -1,0 +1,3 @@
+protocol GameVCToBall {
+    func restart()
+}

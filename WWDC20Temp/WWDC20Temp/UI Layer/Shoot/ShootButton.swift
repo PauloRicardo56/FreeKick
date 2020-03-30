@@ -10,8 +10,8 @@ class ShootButton: SKSpriteNode {
         super.init(texture: nil, color: color, size: size)
         
         self.player = player
-        self.alpha = 0.3
-        self.isUserInteractionEnabled = true
+        alpha = 0.3
+        isUserInteractionEnabled = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,10 +28,10 @@ class ShootButton: SKSpriteNode {
                 interval,
                 player!.runPlayer()
             ])
-            self.run(freeKick)
+            run(freeKick)
         } else {
             stats[0].stopSlider()
-            //TODO: Animate of the background line (with the green space for a good shot)
+            // TODO: Animate of the background line (with the green space for a good shot)
             pressed = true
         }
     }
@@ -41,14 +41,14 @@ class ShootButton: SKSpriteNode {
 extension ShootButton: ShootButtonToStats {
     func turnActive() {
         // TODO: Activate animation
-        self.isUserInteractionEnabled = true
-        self.alpha = 1
+        isUserInteractionEnabled = true
+        alpha = 1
     }
     
     func turnInactive() {
         // TODO: Deactivate animation
-        self.isUserInteractionEnabled = false
-        self.alpha = 0.3
+        isUserInteractionEnabled = false
+        alpha = 0.3
     }
 }
 
