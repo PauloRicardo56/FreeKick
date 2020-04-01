@@ -40,6 +40,20 @@ extension GoalViewModel: GoalToBall {
         return CGPoint(x: randomX, y: randomY)
     }
     
+    func getGkFallLeft() -> CGPoint {
+        let x = goal.position.x - goalWidth*0.45
+        let y = goal.position.y + goalHeight*0.3
+        
+        return CGPoint(x: x, y: y)
+    }
+    
+    func getGkFallRight() -> CGPoint {
+        let x = goal.position.x + goalWidth*0.05
+        let y = goal.position.y + goalHeight*0.3
+        
+        return CGPoint(x: x, y: y)
+    }
+    
     func getGoalY() -> CGFloat {
         return goal.position.y + goal.position.y * 0.02
     }

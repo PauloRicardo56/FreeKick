@@ -2,16 +2,18 @@ import SpriteKit
 
 
 class PlayerViewModel {
-    var ballViewModel: BallToPlayer!
     var player: SKSpriteNode!
     let playerSpeed = 1.5
+    // MARK: Delegates
+    var ballViewModel: BallToPlayer!
+    var goalkeeper: GoalkeeperToPlayer!
     
     init(ballVM: BallToPlayer) {
         ballViewModel = ballVM
     }
     
     func animate() -> SKAction {
-        let frames = Images.Player.allCases
+        let frames = Assets.Player.allCases
         var textures = [SKTexture]()
         
         for frame in frames {
@@ -26,9 +28,15 @@ class PlayerViewModel {
 
 // MARK: - PlayerToGameScene
 extension PlayerViewModel: PlayerToGameScene {
+    var setGoalkeeper: GoalkeeperToPlayer! {
+        get { return goalkeeper }
+        set { goalkeeper = newValue }
+    }
+    
     func loadPlayer() -> SKSpriteNode {
-        player = SKSpriteNode(imageNamed: Images.Player.frame1.rawValue)
-        player.anchorPoint = CGPoint(x: 0.5, y: 0)
+        player = SKSpriteNode(imageNamed: Assets.Player.frame1.rawValue)
+        player.zPosition = 5
+        player.anchorPoint = CGPoint(x: 0.5, y: 0.05)
         
         return player
     }
@@ -48,7 +56,8 @@ extension PlayerViewModel: PlayerToShootButton {
             run.timingMode = .easeInEaseOut
             
             let group = SKAction.group([run, self.animate()])
-            let freeKick = SKAction.sequence([group, self.ballViewModel.shootBall()])
+            let shoot = SKAction.sequence([.wait(forDuration: 1.1), self.ballViewModel.shootBall()])
+            let freeKick = SKAction.group([group, shoot])
             
             self.player.run(freeKick)
         }

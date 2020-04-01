@@ -1,0 +1,3 @@
+protocol DirectionToShoot {
+    func deactivate()
+}

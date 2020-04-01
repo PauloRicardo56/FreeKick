@@ -74,6 +74,28 @@ enum Points {
                 return (controlPoint ↙︎ 100) | (controlPoint ← 100)
             }
         }
+        
+        struct GkDefenseLeft: GoalPointsProtocol {
+            var minX: CGFloat { return -0.40 }
+            var maxX: CGFloat { return -0.35 }
+            var minY: CGFloat { return  0.50 }
+            var maxY: CGFloat { return  0.75 }
+            
+            func control(controlPoint: CGPoint) -> CGPoint {
+                return (controlPoint ↙︎ 100) | (controlPoint ← 100)
+            }
+        }
+        
+        struct GkDefenseRight: GoalPointsProtocol {
+            var minX: CGFloat { return -0.02 }
+            var maxX: CGFloat { return  0.00 }
+            var minY: CGFloat { return  0.55 }
+            var maxY: CGFloat { return  0.60 }
+            
+            func control(controlPoint: CGPoint) -> CGPoint {
+                return (controlPoint ↙︎ 100) | (controlPoint ← 100)
+            }
+        }
     }
     
     // MARK: - Stats points

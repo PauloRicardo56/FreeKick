@@ -3,17 +3,20 @@ import SpriteKit
 
 
 class GameScene: SKScene {
+    // MARK: Models
     var playerViewModel: PlayerToGameScene!
     var ballViewModel: BallToGameScene!
     var goalViewModel: GoalViewModel!
-    //(GoalToGameScene & GoalToGoalkeeper & GoalToBackground)!
+    var background: Background!
+    // MARK: UI
     var uiLayer: LayerToGameScene!
+    var playerStats: [NewStats] = []
+    var directionButtons: [DirectionButton] = []
+    // MARK: Delegates
+    var gameVC: GameVCToBall!
+    // MARK: Utils
     var scrWidth: CGFloat!
     var scrHeight: CGFloat!
-    var background: Background!
-    var strStats: NewStats!
-    var effStats: NewStats!
-    var gameVC: GameVCToBall!
     
     init(size: CGSize, gameVC: GameVCToBall) {
         super.init(size: size)
@@ -29,10 +32,16 @@ class GameScene: SKScene {
         loadScene()
         loadUI()
         
-//        for _ in 0...1000 {
+//        for _ in 0...100 {
+//            let ball = SKShapeNode(circleOfRadius: 10)
+//            ball.fillColor = .blue
+//            ball.position = goalViewModel.getGoalPoint(side: Points.GoalsPoints.GkDefenseLeft())
+//            addChild(ball)
+//        }
+//        for _ in 0...100 {
 //            let ball = SKShapeNode(circleOfRadius: 10)
 //            ball.fillColor = .red
-//            ball.position = goalViewModel.getGoalPoint(side: Points.GoalsPoints.ValidRight())
+//            ball.position = goalViewModel.getGoalPoint(side: Points.GoalsPoints.GkDefenseRight())
 //            addChild(ball)
 //        }
     }
@@ -46,13 +55,6 @@ class GameScene: SKScene {
         scrWidth = frame.width
         scrHeight = frame.height
     }
-    
-//    func setupSketch() {
-//        let background = SKSpriteNode(imageNamed: "bg")
-//        background.position = CGPoint(x: size.width*0.5, y: size.height*0.5)
-//        background.alpha = 0.3
-//        addChild(background)
-//    }
 }
 
 // MARK: - Scene load
@@ -73,8 +75,11 @@ extension GameScene {
         addChild(player)    
         
         let goalkeeper = Goalkeeper(goal: goalViewModel)
-        goalkeeper.position = CGPoint(x: -goal.frame.width*0.4, y: -goal.frame.height*0.05) + goal.position
+        goalkeeper.position = CGPoint(x: -goal.frame.width*0.2, y: goal.frame.height*0.3) + goal.position
         addChild(goalkeeper)
+        playerViewModel.setGoalkeeper = goalkeeper
+        ballViewModel.setGoalkeeper = goalkeeper
+        goalkeeper.gameVC = gameVC
         
         background = Background(goal: goalViewModel, goalkeeper: goalkeeper)
         background.setScale(1.8)
@@ -101,39 +106,40 @@ extension GameScene {
         uiLayer = UILayer()
         
         
-        strStats = uiLayer.loadStat(statType: .str)
-        x = scrWidth/2 - strStats.size.width/2
-        strStats.position = CGPoint(x: x, y: scrHeight * strYMult)
-        ballViewModel.setBallNewStats["str"] = strStats
-        addChild(strStats)
+        playerStats.append(uiLayer.loadStat(statType: .str))
+        playerStats[0].activate()
+        x = scrWidth/2 - playerStats[0].size.width/2
+        playerStats[0].position = CGPoint(x: x, y: scrHeight * strYMult)
+        ballViewModel.setBallNewStats["str"] = playerStats[0]
+        addChild(playerStats[0])
         
-        effStats = uiLayer.loadStat(statType: .eff)
-        effStats.position = CGPoint(x: x, y: scrHeight * effYMult)
-        addChild(effStats)
-        ballViewModel.setBallNewStats["eff"] = effStats
+        playerStats.append(uiLayer.loadStat(statType: .eff))
+        playerStats[1].position = CGPoint(x: x, y: scrHeight * effYMult)
+        addChild(playerStats[1])
+        ballViewModel.setBallNewStats["eff"] = playerStats[1]
         
-        uiLayer.setButtonStats(stats: [strStats, effStats])
-        background.stats = [strStats, effStats]
+        uiLayer.setButtonStats(stats: [playerStats[0], playerStats[1]])
+        background.stats = [playerStats[0], playerStats[1]]
         
+        loadDirections()
         loadButton()
-        loadDirections(stats: [strStats, effStats])
     }
     
     func loadButton() {
-        let button = uiLayer.loadButton(color: .green, size: CGSize(width: 120, height: 120), player: playerViewModel as! PlayerToShootButton)
+        let button = uiLayer.loadButton(directions: directionButtons, player: playerViewModel as! PlayerToShootButton)
         button.position = CGPoint(x: 1200, y: 100)
         addChild(button)
     }
     
-    func loadDirections(stats: [NewStats]) {
-        let left = DirectionButton(isLeft: true, background: background)
-        left.position = CGPoint(x: 80, y: 100)
-        addChild(left)
-        left.newStats = stats
+    func loadDirections() {
+        directionButtons.append(DirectionButton(isLeft: true, background: background))
+        directionButtons[0].position = CGPoint(x: 80, y: 100)
+        addChild(directionButtons[0])
+        directionButtons[0].newStats = playerStats
         
-        let right = DirectionButton(isLeft: false, background: background)
-        right.position = CGPoint(x: 250, y: 100)
-        addChild(right)
-        right.newStats = stats
+        directionButtons.append(DirectionButton(isLeft: false, background: background))
+        directionButtons[1].position = CGPoint(x: 250, y: 100)
+        addChild(directionButtons[1])
+        directionButtons[1].newStats = playerStats
     }
 }

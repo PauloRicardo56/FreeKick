@@ -2,6 +2,8 @@ import SpriteKit
 
 
 protocol PlayerToGameScene {
+    var setGoalkeeper: GoalkeeperToPlayer! { get set }
+    
     func loadPlayer() -> SKSpriteNode
     
     func getPlayerFrame() -> CGRect

@@ -11,13 +11,25 @@ protocol GoalToGameScene {
 protocol GoalToBall {
     func getGoalPoint(side: GoalPointsProtocol) -> CGPoint
     
+    func getGkFallLeft() -> CGPoint
+    
+    func getGkFallRight() -> CGPoint
+    
     func getGoalY() -> CGFloat
 }
 
 protocol GoalToGoalkeeper {
     var size: CGSize  { get }
-    
     var position: CGPoint  { get }
+    
+    //Temp
+    func getGoalPoint(side: GoalPointsProtocol) -> CGPoint
+    
+    //Temp
+    func getGkFallRight() -> CGPoint
+    
+    //Temp
+    func getGkFallLeft() -> CGPoint
 }
 
 protocol GoalToBackground {

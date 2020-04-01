@@ -14,6 +14,8 @@ protocol StatsToShootButton: class {
     func fadeOutAnimation() -> SKAction
     
     func stopSlider()
+    
+    func activate()
 }
 
 protocol NewStatsToDirection {

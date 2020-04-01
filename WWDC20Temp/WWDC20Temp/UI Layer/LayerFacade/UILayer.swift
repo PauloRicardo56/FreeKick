@@ -7,22 +7,21 @@ class UILayer {
     var newStats: NewStatsToBall!
     
     init() {
-        shootButton = ShootButton(color: .clear, size: .zero, player: nil)
+        shootButton = ShootButton(player: nil)
     }
 }
 
 // MARK: - LayerToGameScene
 extension UILayer: LayerToGameScene {
-    func loadStat(statType: Images.Stat.StatIndicator) -> NewStats {
+    func loadStat(statType: Assets.Stat.StatIndicators) -> NewStats {
         let stat = NewStats(statType: statType)
         
         return stat
     }
     
-    func loadButton(color: UIColor, size: CGSize, player: PlayerToShootButton) -> SKSpriteNode {
-        shootButton.color = color
-        shootButton.size = size
+    func loadButton(directions: [DirectionToShoot], player: PlayerToShootButton) -> SKSpriteNode {
         shootButton.setPlayer = player
+        shootButton.setDirection = directions
         
         return shootButton
     }

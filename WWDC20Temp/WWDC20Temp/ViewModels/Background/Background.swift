@@ -2,7 +2,7 @@ import SpriteKit
 
 
 class Background: SKSpriteNode {
-    let frames = Images.Background.allCases
+    let frames = Assets.Background.allCases
     var currPosition = 2
     let totalPositions: Int!
     // MARK: Delegates
@@ -11,7 +11,7 @@ class Background: SKSpriteNode {
     var stats: [NewStatsToDirection]? = nil
     
     init(goal: GoalToBackground, goalkeeper: GoalkeeperToBackground) {
-        let texture = SKTexture(imageNamed: Images.Background.frame2.rawValue)
+        let texture = SKTexture(imageNamed: Assets.Background.frame2.rawValue)
         totalPositions = frames.count - 1
         self.goal = goal
         self.goalkeeper = goalkeeper
