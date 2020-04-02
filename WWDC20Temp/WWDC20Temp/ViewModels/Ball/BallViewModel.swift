@@ -11,6 +11,7 @@ class BallViewModel {
     var background: BackgroundToBall!
     var gameVC: GameVCToBall!
     var goalkeeper: GoalkeeperToBall!
+    var placar: PlacarToBall!
     
     init(goal: GoalToBall) {
         self.goal = goal
@@ -100,11 +101,13 @@ extension BallViewModel: BallToPlayer {
             follow.timingMode = .easeOut
             
             let completion1 = {
+                self.placar.goal()
                 self.ball.removeAllActions()
                 self.ball.run(self.fall(y: self.goal.getGoalY()), completion: { self.gameVC.restart() })
                 // MARK: FIM GOAL
             }
             let completion2 = {
+                self.placar.miss()
                 self.ball.removeAction(forKey: "scale")
                 if defense {
                     self.ball.run(.run({

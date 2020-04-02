@@ -1,4 +1,6 @@
 enum Assets {
+    static let placar = "placar"
+    
     enum Player: String, CaseIterable {
         case frame1 = "frame-1"
         case frame2 = "frame-2"

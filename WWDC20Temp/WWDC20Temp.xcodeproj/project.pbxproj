@@ -35,6 +35,8 @@
 		2365814C24328EBF00A460B4 /* GameVCProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365814B24328EBF00A460B4 /* GameVCProtocols.swift */; };
 		238279BB242E9893001EEE55 /* Moveable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238279BA242E9893001EEE55 /* Moveable.swift */; };
 		2384477E2433A39C00076E86 /* DirectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2384477D2433A39C00076E86 /* DirectionProtocols.swift */; };
+		23B1148724355FEF00D813E6 /* PlacarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1148624355FEF00D813E6 /* PlacarViewModel.swift */; };
+		23B1148924356B8200D813E6 /* PlacarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1148824356B8200D813E6 /* PlacarProtocols.swift */; };
 		23BFA5D5241AAD0E000E90D9 /* BallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BFA5D4241AAD0E000E90D9 /* BallViewModel.swift */; };
 		23BFA5D7241AAD24000E90D9 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BFA5D6241AAD24000E90D9 /* PlayerViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,8 @@
 		2365814B24328EBF00A460B4 /* GameVCProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVCProtocols.swift; sourceTree = "<group>"; };
 		238279BA242E9893001EEE55 /* Moveable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moveable.swift; sourceTree = "<group>"; };
 		2384477D2433A39C00076E86 /* DirectionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionProtocols.swift; sourceTree = "<group>"; };
+		23B1148624355FEF00D813E6 /* PlacarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacarViewModel.swift; sourceTree = "<group>"; };
+		23B1148824356B8200D813E6 /* PlacarProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacarProtocols.swift; sourceTree = "<group>"; };
 		23BFA5D4241AAD0E000E90D9 /* BallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallViewModel.swift; sourceTree = "<group>"; };
 		23BFA5D6241AAD24000E90D9 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +162,7 @@
 		2321C7DD241FDCF60038E486 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				23B1148524355FE100D813E6 /* Placar */,
 				23BFA5D1241AACDE000E90D9 /* Player */,
 				23BFA5D3241AACED000E90D9 /* Ball */,
 				230E3393241ABD1A00951D11 /* Goal */,
@@ -255,6 +260,15 @@
 				238279BA242E9893001EEE55 /* Moveable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		23B1148524355FE100D813E6 /* Placar */ = {
+			isa = PBXGroup;
+			children = (
+				23B1148624355FEF00D813E6 /* PlacarViewModel.swift */,
+				23B1148824356B8200D813E6 /* PlacarProtocols.swift */,
+			);
+			path = Placar;
 			sourceTree = "<group>";
 		};
 		23BFA5D1241AACDE000E90D9 /* Player */ = {
@@ -369,6 +383,7 @@
 				2351648A241BBDC200E19485 /* Points.swift in Sources */,
 				230E33A1241B0D4000951D11 /* BallProtocols.swift in Sources */,
 				235FCDC82431843700D54AEE /* Background.swift in Sources */,
+				23B1148724355FEF00D813E6 /* PlacarViewModel.swift in Sources */,
 				230E3395241ABD2500951D11 /* GoalViewModel.swift in Sources */,
 				2365814A2432297800A460B4 /* GoalkeeperProtocols.swift in Sources */,
 				23516487241BB12F00E19485 /* LayerProtocols.swift in Sources */,
@@ -376,6 +391,7 @@
 				230E33A5241B0EB400951D11 /* PlayerProtocols.swift in Sources */,
 				230C722A242D537A00617214 /* Goalkeeper.swift in Sources */,
 				2384477E2433A39C00076E86 /* DirectionProtocols.swift in Sources */,
+				23B1148924356B8200D813E6 /* PlacarProtocols.swift in Sources */,
 				230E339D241B0ABD00951D11 /* GoalProtocols.swift in Sources */,
 				235164A0241E97DE00E19485 /* Protocols.swift in Sources */,
 				2351647D241BACB300E19485 /* ShootButton.swift in Sources */,
