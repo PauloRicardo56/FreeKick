@@ -34,6 +34,14 @@ class GameScene: SKScene {
         loadScene()
         loadUI()
         
+//        let label = LabelViewModel()
+//        label.position = .init(x: size.width/2, y: size.height/2)
+//        label.zPosition = 10
+//        addChild(label)
+//
+//        label.animate()
+        
+        
 //        for _ in 0...100 {
 //            let ball = SKShapeNode(circleOfRadius: 10)
 //            ball.fillColor = .blue
@@ -92,6 +100,12 @@ extension GameScene {
         ballViewModel.setBackground = background
         
         setPlacar()
+        
+        let label = LabelViewModel()
+        label.position = .init(x: size.width/2, y: size.height/2)
+        label.zPosition = 10
+        ballViewModel.setLabel = label
+        addChild(label)
     }
     
     func setPlacar() {

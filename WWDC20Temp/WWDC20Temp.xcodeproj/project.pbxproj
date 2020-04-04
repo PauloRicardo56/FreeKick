@@ -15,6 +15,8 @@
 		230E339D241B0ABD00951D11 /* GoalProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E339C241B0ABD00951D11 /* GoalProtocols.swift */; };
 		230E33A1241B0D4000951D11 /* BallProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E33A0241B0D4000951D11 /* BallProtocols.swift */; };
 		230E33A5241B0EB400951D11 /* PlayerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E33A4241B0EB400951D11 /* PlayerProtocols.swift */; };
+		231112602436436F00BE95BA /* LabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2311125F2436436F00BE95BA /* LabelViewModel.swift */; };
+		2311126224366B3500BE95BA /* LabelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2311126124366B3500BE95BA /* LabelProtocols.swift */; };
 		2313B90B241989DD009A3CBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313B90A241989DD009A3CBD /* AppDelegate.swift */; };
 		2313B911241989DD009A3CBD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313B910241989DD009A3CBD /* GameScene.swift */; };
 		2313B913241989DD009A3CBD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2313B912241989DD009A3CBD /* GameViewController.swift */; };
@@ -50,6 +52,8 @@
 		230E339C241B0ABD00951D11 /* GoalProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalProtocols.swift; sourceTree = "<group>"; };
 		230E33A0241B0D4000951D11 /* BallProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallProtocols.swift; sourceTree = "<group>"; };
 		230E33A4241B0EB400951D11 /* PlayerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProtocols.swift; sourceTree = "<group>"; };
+		2311125F2436436F00BE95BA /* LabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewModel.swift; sourceTree = "<group>"; };
+		2311126124366B3500BE95BA /* LabelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelProtocols.swift; sourceTree = "<group>"; };
 		2313B907241989DD009A3CBD /* WWDC20Temp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WWDC20Temp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2313B90A241989DD009A3CBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2313B910241989DD009A3CBD /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -123,6 +127,15 @@
 			path = Operands;
 			sourceTree = "<group>";
 		};
+		2311125E2436434000BE95BA /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				2311125F2436436F00BE95BA /* LabelViewModel.swift */,
+				2311126124366B3500BE95BA /* LabelProtocols.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
 		2313B8FE241989DD009A3CBD = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +181,7 @@
 				230E3393241ABD1A00951D11 /* Goal */,
 				230C7228242D4EC000617214 /* Goalkeeper */,
 				235FCDC62431842300D54AEE /* Background */,
+				2311125E2436434000BE95BA /* Label */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -382,6 +396,7 @@
 				2313B913241989DD009A3CBD /* GameViewController.swift in Sources */,
 				2351648A241BBDC200E19485 /* Points.swift in Sources */,
 				230E33A1241B0D4000951D11 /* BallProtocols.swift in Sources */,
+				2311126224366B3500BE95BA /* LabelProtocols.swift in Sources */,
 				235FCDC82431843700D54AEE /* Background.swift in Sources */,
 				23B1148724355FEF00D813E6 /* PlacarViewModel.swift in Sources */,
 				230E3395241ABD2500951D11 /* GoalViewModel.swift in Sources */,
@@ -397,6 +412,7 @@
 				2351647D241BACB300E19485 /* ShootButton.swift in Sources */,
 				23516492241BF0DE00E19485 /* ShootButtonProtocols.swift in Sources */,
 				238279BB242E9893001EEE55 /* Moveable.swift in Sources */,
+				231112602436436F00BE95BA /* LabelViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

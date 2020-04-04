@@ -12,6 +12,7 @@ class BallViewModel {
     var gameVC: GameVCToBall!
     var goalkeeper: GoalkeeperToBall!
     var placar: PlacarToBall!
+    var label: LabelToBall!
     
     init(goal: GoalToBall) {
         self.goal = goal
@@ -35,6 +36,10 @@ extension BallViewModel: BallToGameScene {
     var setGoalkeeper: GoalkeeperToBall! {
         get { return goalkeeper }
         set { goalkeeper = newValue }
+    }
+    var setLabel: LabelToBall! {
+        get { return label }
+        set { label = newValue }
     }
     
     func loadBall() -> SKSpriteNode {
@@ -64,7 +69,7 @@ extension BallViewModel: BallToPlayer {
                     path = self.makePath(constant: goalPointsConstant.ValidRight())
                 } else {
                     // MARK: Right miss
-                    let random = Int.random(in: 0...5)
+                    let random = Int.random(in: 0...10)
                     if random < 4 {
                         // Outfield
                         path = self.makePath(constant: goalPointsConstant.InvalidRight())
@@ -83,7 +88,7 @@ extension BallViewModel: BallToPlayer {
                     path = self.makePath(constant: goalPointsConstant.ValidLeft())
                 } else {
                     // MARK: Left miss
-                    let random = Int.random(in: 0...5)
+                    let random = Int.random(in: 0...10)
                     if random < 4 {
                         // Outfield
                         path = self.makePath(constant: goalPointsConstant.InvalidLeft())
@@ -103,7 +108,14 @@ extension BallViewModel: BallToPlayer {
             let completion1 = {
                 self.placar.goal()
                 self.ball.removeAllActions()
-                self.ball.run(self.fall(y: self.goal.getGoalY()), completion: { self.gameVC.restart() })
+                let group = SKAction.group([self.fall(y: self.goal.getGoalY()),
+                                            .sequence([.wait(forDuration: 0.5),
+                                                       .run { self.label.animate()
+                                            }])
+                ])
+                self.ball.run(.sequence([group, .wait(forDuration: 1.5)]),
+                              completion: { self.gameVC.restart() }
+                )
                 // MARK: FIM GOAL
             }
             let completion2 = {

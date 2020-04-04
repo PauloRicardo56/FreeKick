@@ -6,6 +6,7 @@ protocol BallToGameScene {
     var setBackground: BackgroundToBall { get set }
     var setGameVC: GameVCToBall { get set }
     var setGoalkeeper: GoalkeeperToBall! { get set }
+    var setLabel: LabelToBall! { get set }
     
     func loadBall() -> SKSpriteNode
 }

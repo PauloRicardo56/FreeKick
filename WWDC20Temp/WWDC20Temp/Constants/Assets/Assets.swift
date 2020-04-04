@@ -109,4 +109,10 @@ enum Assets {
             }
         }
     }
+    
+    enum Label {
+        static let up = "goalLabel-1"
+        static let down = "goalLabel-2"
+        static let flash = "labelFlash"
+    }
 }
