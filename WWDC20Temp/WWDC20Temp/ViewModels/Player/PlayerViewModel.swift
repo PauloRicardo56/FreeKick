@@ -35,7 +35,6 @@ extension PlayerViewModel: PlayerToGameScene {
     
     func loadPlayer() -> SKSpriteNode {
         player = SKSpriteNode(imageNamed: Assets.Player.frame1.rawValue)
-        player.zPosition = 5
         player.anchorPoint = CGPoint(x: 0.5, y: 0.05)
         
         return player

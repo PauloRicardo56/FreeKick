@@ -1,5 +1,6 @@
 enum Assets {
     static let placar = "placar"
+    static let barreira = "barreira"
     
     enum Player: String, CaseIterable {
         case frame1 = "frame-1"
@@ -14,6 +15,13 @@ enum Assets {
         case frame10 = "frame-10"
         case frame11 = "frame-11"
         case frame12 = "frame-12"
+    }
+    
+    enum Goal: String, CaseIterable {
+        case frame1 = "goalFrame-1"
+        case frame2 = "goalFrame-2"
+        case frame3 = "goalFrame-3"
+        case frame4 = "goalFrame-4"
     }
     
     enum Gk {

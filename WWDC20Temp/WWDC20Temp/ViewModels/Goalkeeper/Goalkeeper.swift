@@ -12,7 +12,6 @@ class Goalkeeper: SKSpriteNode, Moveable {
         
         anchorPoint = CGPoint(x: 0.5, y: 0.65)
         setScale(0.7)
-        zPosition = 3
         self.goal = goal
         
         stayAnimation()

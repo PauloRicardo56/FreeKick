@@ -41,6 +41,7 @@
 		23B1148924356B8200D813E6 /* PlacarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1148824356B8200D813E6 /* PlacarProtocols.swift */; };
 		23BFA5D5241AAD0E000E90D9 /* BallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BFA5D4241AAD0E000E90D9 /* BallViewModel.swift */; };
 		23BFA5D7241AAD24000E90D9 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BFA5D6241AAD24000E90D9 /* PlayerViewModel.swift */; };
+		23E6F0A0243946A10078FC4B /* BarreiraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6F09F243946A10078FC4B /* BarreiraViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		23B1148824356B8200D813E6 /* PlacarProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacarProtocols.swift; sourceTree = "<group>"; };
 		23BFA5D4241AAD0E000E90D9 /* BallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallViewModel.swift; sourceTree = "<group>"; };
 		23BFA5D6241AAD24000E90D9 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		23E6F09F243946A10078FC4B /* BarreiraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarreiraViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 		2321C7DD241FDCF60038E486 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				23E6F09E243946910078FC4B /* Barreira */,
 				23B1148524355FE100D813E6 /* Placar */,
 				23BFA5D1241AACDE000E90D9 /* Player */,
 				23BFA5D3241AACED000E90D9 /* Ball */,
@@ -311,6 +314,14 @@
 			path = GameScene;
 			sourceTree = "<group>";
 		};
+		23E6F09E243946910078FC4B /* Barreira */ = {
+			isa = PBXGroup;
+			children = (
+				23E6F09F243946A10078FC4B /* BarreiraViewModel.swift */,
+			);
+			path = Barreira;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -388,6 +399,7 @@
 				23516483241BB07700E19485 /* UILayer.swift in Sources */,
 				230C7225242BB17C00617214 /* StatsProtocols.swift in Sources */,
 				230C7223242BABAD00617214 /* Assets.swift in Sources */,
+				23E6F0A0243946A10078FC4B /* BarreiraViewModel.swift in Sources */,
 				230E339B241ACE8B00951D11 /* CGPointOperands.swift in Sources */,
 				23BFA5D7241AAD24000E90D9 /* PlayerViewModel.swift in Sources */,
 				2313B911241989DD009A3CBD /* GameScene.swift in Sources */,

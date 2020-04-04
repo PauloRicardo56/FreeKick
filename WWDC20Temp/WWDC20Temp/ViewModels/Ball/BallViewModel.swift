@@ -46,7 +46,6 @@ extension BallViewModel: BallToGameScene {
         ball = SKSpriteNode(imageNamed: Assets.Ball.frame4.rawValue)
         ball.setScale(1.8)
         ball.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        ball.zPosition = 4
         
         return ball
     }
@@ -70,7 +69,7 @@ extension BallViewModel: BallToPlayer {
                 } else {
                     // MARK: Right miss
                     let random = Int.random(in: 0...10)
-                    if random < 4 {
+                    if random < 5 {
                         // Outfield
                         path = self.makePath(constant: goalPointsConstant.InvalidRight())
                     } else {
@@ -89,7 +88,7 @@ extension BallViewModel: BallToPlayer {
                 } else {
                     // MARK: Left miss
                     let random = Int.random(in: 0...10)
-                    if random < 4 {
+                    if random < 5 {
                         // Outfield
                         path = self.makePath(constant: goalPointsConstant.InvalidLeft())
                     } else {
@@ -106,9 +105,10 @@ extension BallViewModel: BallToPlayer {
             follow.timingMode = .easeOut
             
             let completion1 = {
+                self.ball.zPosition = 1
                 self.placar.goal()
                 self.ball.removeAllActions()
-                let group = SKAction.group([self.fall(y: self.goal.getGoalY()),
+                let group = SKAction.group([self.fall(y: self.goal.getGoalY() + 10),
                                             .sequence([.wait(forDuration: 0.5),
                                                        .run { self.label.animate()
                                             }])
@@ -132,6 +132,7 @@ extension BallViewModel: BallToPlayer {
             }
             
             if isGoal {
+                self.ball.run(.sequence([.wait(forDuration: 0.8), .run { self.goal.animate() }]))
                 self.ball.run(follow, completion: completion1)
             } else {
                 self.ball.run(follow, completion: completion2)

@@ -9,6 +9,18 @@ class GoalViewModel {
     init(goalHeight: CGFloat) {
         self.goalHeight = goalHeight
     }
+    
+    func animate() {
+        var t: [SKTexture] = []
+        let animation: SKAction
+        
+        for texture in Assets.Goal.allCases {
+            t.append(.init(imageNamed: texture.rawValue))
+        }
+        
+        animation = .animate(with: t, timePerFrame: 0.2, resize: false, restore: true)
+        goal.run(.repeat(animation, count: 1))
+    }
 }
 
 // MARK: - GoalToGameScene
@@ -18,7 +30,7 @@ extension GoalViewModel: GoalToGameScene {
     }
     
     func loadGoal() -> SKSpriteNode {
-        goal = SKSpriteNode(imageNamed: "goal")
+        goal = SKSpriteNode(imageNamed: Assets.Goal.frame1.rawValue)
         goal.setScale(1.85)
         goal.anchorPoint = CGPoint(x: 0.5, y: 0)
         

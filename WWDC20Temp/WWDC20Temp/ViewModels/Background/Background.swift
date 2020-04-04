@@ -9,6 +9,7 @@ class Background: SKSpriteNode {
     let goal: GoalToBackground!
     let goalkeeper: GoalkeeperToBackground!
     var stats: [NewStatsToDirection]? = nil
+    var barreira: BarreiraViewModel!
     
     init(goal: GoalToBackground, goalkeeper: GoalkeeperToBackground) {
         let texture = SKTexture(imageNamed: Assets.Background.frame2.rawValue)
@@ -41,6 +42,7 @@ extension Background: BackgroundToDirection {
                 goalkeeper.resetAnimation()
                 stats![0].moveGreenBar(isLeft: leftSide)
                 stats![1].moveGreenBar(isLeft: leftSide)
+                barreira.move(isLeft: leftSide)
             }
         } else {
             newPosition = currPosition - 1
@@ -53,6 +55,7 @@ extension Background: BackgroundToDirection {
                 goalkeeper.resetAnimation()
                 stats![0].moveGreenBar(isLeft: leftSide)
                 stats![1].moveGreenBar(isLeft: leftSide)
+                barreira.move(isLeft: leftSide)
             }
         }
     }

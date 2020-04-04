@@ -16,6 +16,8 @@ protocol GoalToBall {
     func getGkFallRight() -> CGPoint
     
     func getGoalY() -> CGFloat
+    
+    func animate()
 }
 
 protocol GoalToGoalkeeper {

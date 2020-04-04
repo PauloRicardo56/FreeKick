@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "goal.png",
+      "filename" : "goalFrame-3.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "goal@2x.png",
+      "filename" : "goalFrame-3@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "goal@3x.png",
+      "filename" : "goalFrame-3@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

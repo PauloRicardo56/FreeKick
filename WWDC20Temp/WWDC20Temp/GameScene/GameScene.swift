@@ -9,6 +9,7 @@ class GameScene: SKScene {
     var goalViewModel: GoalViewModel!
     var background: Background!
     var placar: Placar!
+    var barreira: BarreiraViewModel!
     // MARK: UI
     var uiLayer: LayerToGameScene!
     var playerStats: [NewStats] = []
@@ -72,20 +73,23 @@ class GameScene: SKScene {
 extension GameScene {
     func loadScene() {
         let goal = goalViewModel.loadGoal()
-        goal.position = .init(x: scrWidth*0.4, y: scrHeight*0.6)
         goal.zPosition = -1
+        goal.position = .init(x: scrWidth*0.4, y: scrHeight*0.6)
         addChild(goal)
         
         let ball = ballViewModel.loadBall()
+        ball.zPosition = 3
         ball.position = .init(x: scrWidth*0.5, y: scrHeight*0.32)
         addChild(ball)
         
         let player = playerViewModel.loadPlayer()
+        player.zPosition = 4
         player.setScale(1.8)
         player.position = .init(x: scrWidth*0.83, y: scrHeight*0.25)
         addChild(player)    
         
         let goalkeeper = Goalkeeper(goal: goalViewModel)
+        zPosition = 0
         goalkeeper.position = .init(x: -goal.frame.width*0.2, y: goal.frame.height*0.3) + goal.position
         addChild(goalkeeper)
         playerViewModel.setGoalkeeper = goalkeeper
@@ -93,19 +97,28 @@ extension GameScene {
         goalkeeper.gameVC = gameVC
         
         background = Background(goal: goalViewModel, goalkeeper: goalkeeper)
+        background.zPosition = -2
         background.setScale(1.8)
         background.position = .init(x: frame.size.width/2, y: frame.size.height/2)
-        background.zPosition = -2
         addChild(background)
         ballViewModel.setBackground = background
         
         setPlacar()
+        placar.zPosition = 9
         
         let label = LabelViewModel()
-        label.position = .init(x: size.width/2, y: size.height/2)
         label.zPosition = 10
+        label.position = .init(x: size.width/2, y: size.height/2)
         ballViewModel.setLabel = label
         addChild(label)
+        
+        barreira = .init(imageNamed: Assets.barreira)
+        barreira.zPosition = 2
+        barreira.setScale(0.9)
+        barreira.anchorPoint = .init(x: 0.5, y: 0)
+        barreira.position = .init(x: size.width*0.55, y: size.height*0.5)
+        addChild(barreira)
+        background.barreira = barreira
     }
     
     func setPlacar() {
