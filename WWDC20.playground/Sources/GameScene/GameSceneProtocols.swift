@@ -1,0 +1,3 @@
+protocol GameSceneToBall {
+    func restart()
+}
