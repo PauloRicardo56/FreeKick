@@ -45,7 +45,6 @@ extension BallViewModel: BallToGameScene {
     
     func loadBall() -> SKSpriteNode {
         ball = SKSpriteNode(imageNamed: Assets.Ball.frame4.rawValue)
-        ball.setScale(1.8)
         ball.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         return ball
@@ -123,11 +122,11 @@ extension BallViewModel: BallToPlayer {
                 self.placar.miss()
                 self.ball.removeAction(forKey: "scale")
                 if defense {
-                    self.ball.run(.run({
-                        self.ball.removeFromParent()
-                    }))
+                    self.ball.run(.run({ self.ball.removeFromParent() }),
+                                  completion: { self.gameScene.restart() })
                 } else {
-                    self.ball.run(SKAction.scale(to: 0.1, duration: 2), completion: { self.gameScene.restart() })
+                    self.ball.run(SKAction.scale(to: 0.1, duration: 2),
+                                  completion: { self.gameScene.restart() })
                 }
                 // MARK: FIM NO GOAL
             }
@@ -140,7 +139,7 @@ extension BallViewModel: BallToPlayer {
             }
             
             self.ball.run(SKAction.animate(with: self.makeTextures(), timePerFrame: 0.1))
-            self.ball.run(SKAction.scale(to: 0.1, duration: 2.2), withKey: "scale")
+            self.ball.run(SKAction.scale(to: 0.1, duration: 1.5), withKey: "scale")
         }
         
         return shootBall

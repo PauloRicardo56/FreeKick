@@ -28,11 +28,11 @@ class LabelViewModel: SKSpriteNode {
         
         super.init(texture: nil, color: .init(red: 1, green: 1, blue: 1, alpha: 0.3), size: .init(width: 2000, height: 1600))
         anchorPoint = .init(x: 0.5, y: 0.5)
-        setScale(1.3)
+//        setScale(1.3)
         alpha = 0
         
         flash.position = .init(x: -size.width*0.01, y: -size.height*0.005)
-        ball.position.x = -size.width*0.12
+        ball.position.x = -size.width*0.16
         
         addChild(up)
         addChild(down)

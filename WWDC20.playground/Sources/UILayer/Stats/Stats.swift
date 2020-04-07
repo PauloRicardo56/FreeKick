@@ -51,14 +51,14 @@ class NewStats: SKSpriteNode, Moveable {
     
     func setUpSlideButton() {
         slideButton = SKSpriteNode(imageNamed: statType.indicator())
-        slideButton.setScale(1.7)
+//        slideButton.setScale(1.7)
         slideButton.zPosition = 2
         slideButton.position = .zero
     }
     
     func setScale() {
-        size.width *= 1.9
-        size.height *= 1.5
+        size.width *= 1.2
+        size.height *= 1.4
         zPosition = 0
     }
 }

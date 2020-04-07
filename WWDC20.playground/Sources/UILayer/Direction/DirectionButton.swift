@@ -13,7 +13,6 @@ class DirectionButton: SKSpriteNode {
         self.isLeft = isLeft
         self.background = background
         super.init(texture: texture, color: .black, size: texture.size())
-//        setScale(1.5)
         
         isUserInteractionEnabled = true
     }
@@ -32,27 +31,33 @@ class DirectionButton: SKSpriteNode {
     }
     
     func pressAnimation() {
-        var t = SKTexture()
-        let pressed = SKAction.run {
-            t = SKTexture(imageNamed: self.isLeft ? self.images.Left.pressed : self.images.Right.pressed)
-            self.texture = t
-            self.size = t.size()
-//            self.setScale(1.5)
-        }
+        let release = SKTexture(imageNamed: self.isLeft ? self.images.Left.pressed : self.images.Right.pressed)
+        run(.animate(with: [release], timePerFrame: 0, resize: true, restore: false))
         
-        run(pressed)
+//        var t = SKTexture()
+//        let pressed = SKAction.run {
+//            t = SKTexture(imageNamed: self.isLeft ? self.images.Left.pressed : self.images.Right.pressed)
+//            self.texture = t
+//            self.size = t.size()
+////            self.setScale(1.5)
+//        }
+//
+//        run(pressed)
     }
     
     func releaseAnimation() {
-        var t = SKTexture()
-        let release = SKAction.run {
-            t = SKTexture(imageNamed: self.isLeft ? self.images.Left.normal : self.images.Right.normal)
-            self.texture = t
-            self.size = t.size()
-//            self.setScale(1.5)
-        }
+        let release = SKTexture(imageNamed: self.isLeft ? self.images.Left.normal : self.images.Right.normal)
+        run(.animate(with: [release], timePerFrame: 0, resize: true, restore: false))
+//        var t = SKTexture()
+//        let release = SKAction.run {
+//            t = SKTexture(imageNamed: self.isLeft ? self.images.Left.normal : self.images.Right.normal)
+//            self.texture = t
+//            self.run(.animate())
+////            self.size = t.size()
+////            self.setScale(1.5)
+//        }
         
-        run(release)
+//        run(release)
     }
 }
 

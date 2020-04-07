@@ -48,27 +48,33 @@ class ShootButton: SKSpriteNode {
     }
     
     func pressAnimation() {
-            var t = SKTexture()
-            let pressed = SKAction.run {
-                t = SKTexture(imageNamed: Assets.HUD.Shoot.pressed)
-                self.texture = t
-                self.size = t.size()
-    //            self.setScale(1.5)
-            }
-            
-            run(pressed)
+        let release = SKTexture(imageNamed: Assets.HUD.Shoot.pressed)
+        run(.animate(with: [release], timePerFrame: 0, resize: true, restore: false))
+        
+//            var t = SKTexture()
+//            let pressed = SKAction.run {
+//                t = SKTexture(imageNamed: Assets.HUD.Shoot.pressed)
+//                self.texture = t
+//                self.size = t.size()
+//    //            self.setScale(1.5)
+//            }
+//
+//            run(pressed)
         }
         
         func releaseAnimation() {
-            var t = SKTexture()
-            let release = SKAction.run {
-                t = SKTexture(imageNamed: Assets.HUD.Shoot.eff)
-                self.texture = t
-                self.size = t.size()
-    //            self.setScale(1.5)
-            }
+            let release = SKTexture(imageNamed: Assets.HUD.Shoot.eff)
+            run(.animate(with: [release], timePerFrame: 0, resize: true, restore: false))
             
-            run(release)
+//            var t = SKTexture()
+//            let release = SKAction.run {
+//                t = SKTexture(imageNamed: Assets.HUD.Shoot.eff)
+//                self.texture = t
+//                self.size = t.size()
+//    //            self.setScale(1.5)
+//            }
+//
+//            run(release)
         }
 }
 

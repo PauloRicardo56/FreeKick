@@ -18,8 +18,8 @@ class GoalViewModel {
             t.append(.init(imageNamed: texture.rawValue))
         }
         
-        animation = .animate(with: t, timePerFrame: 0.2, resize: false, restore: true)
-        goal.run(.repeat(animation, count: 1))
+        animation = .animate(with: t, timePerFrame: 0.1, resize: false, restore: true)
+        goal.run(animation)
     }
 }
 
@@ -31,7 +31,6 @@ extension GoalViewModel: GoalToGameScene {
     
     func loadGoal() -> SKSpriteNode {
         goal = SKSpriteNode(imageNamed: Assets.Goal.frame1.rawValue)
-        goal.setScale(1.85)
         goal.anchorPoint = CGPoint(x: 0.5, y: 0)
         
         return goal

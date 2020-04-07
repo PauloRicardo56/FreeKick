@@ -46,11 +46,10 @@ public class GameScene: SKScene {
 
 // MARK: - GameSceneToBall
 extension GameScene: GameSceneToBall {
-    
     func restart() {
         let scene = GameScene(size: view!.frame.size)
         scene.scaleMode = .aspectFill
-        view!.presentScene(scene)
+        view!.presentScene(scene, transition: .fade(withDuration: 2))
     }
 }
 
@@ -58,11 +57,13 @@ extension GameScene: GameSceneToBall {
 extension GameScene {
     func loadScene() {
         let goal = goalViewModel.loadGoal()
+//        goal.setScale(0.85)
         goal.zPosition = -1
-        goal.position = .init(x: scrWidth*0.4, y: scrHeight*0.6)
+        goal.position = .init(x: scrWidth*0.4, y: scrHeight*0.615)
         addChild(goal)
         
         let ball = ballViewModel.loadBall()
+        ball.setScale(0.8)
         ball.zPosition = 3
         ball.position = .init(x: scrWidth*0.5, y: scrHeight*0.32)
         ballViewModel.gameScene = self
@@ -70,11 +71,12 @@ extension GameScene {
         
         let player = playerViewModel.loadPlayer()
         player.zPosition = 4
-        player.setScale(1.8)
+        player.setScale(0.8)
         player.position = .init(x: scrWidth*0.83, y: scrHeight*0.25)
         addChild(player)
         
         let goalkeeper = Goalkeeper(goal: goalViewModel)
+        goalkeeper.setScale(0.4)
         zPosition = 0
         goalkeeper.position = .init(x: -goal.frame.width*0.2, y: goal.frame.height*0.3) + goal.position
         addChild(goalkeeper)
@@ -83,7 +85,7 @@ extension GameScene {
         
         background = Background(goal: goalViewModel, goalkeeper: goalkeeper)
         background.zPosition = -2
-        background.setScale(1.8)
+        background.setScale(1.2)
         background.position = .init(x: frame.size.width/2, y: frame.size.height/2)
         addChild(background)
         ballViewModel.setBackground = background
@@ -98,16 +100,17 @@ extension GameScene {
         addChild(label)
         
         barreira = .init(imageNamed: Assets.barreira)
+        barreira.setScale(0.4)
         barreira.zPosition = 2
-        barreira.setScale(0.9)
         barreira.anchorPoint = .init(x: 0.5, y: 0)
-        barreira.position = .init(x: size.width*0.55, y: size.height*0.5)
+        barreira.position = .init(x: size.width*0.5, y: size.height*0.5)
         addChild(barreira)
         background.barreira = barreira
     }
     
     func setPlacar() {
         placar.position = .init(x: size.width/2, y: size.height*0.9)
+//        setScale(2)
         addChild(placar)
     }
 }
@@ -148,19 +151,22 @@ extension GameScene {
     
     func loadButton() {
         let button = uiLayer.loadButton(directions: directionButtons, player: playerViewModel)
-        button.position = .init(x: 1200, y: 100)
+        button.position = .init(x: size.width*0.85, y: size.height*0.1)
+        button.setScale(0.6)
         addChild(button)
     }
     
     func loadDirections() {
         directionButtons.append(DirectionButton(isLeft: true, background: background))
-        directionButtons[0].position = .init(x: 80, y: 100)
+        directionButtons[0].position = .init(x: size.width*0.1, y: size.height*0.1)
         addChild(directionButtons[0])
         directionButtons[0].newStats = playerStats
+        directionButtons[0].setScale(0.6)
         
         directionButtons.append(DirectionButton(isLeft: false, background: background))
-        directionButtons[1].position = .init(x: 250, y: 100)
+        directionButtons[1].position = .init(x: size.width*0.2, y: size.height*0.1)
         addChild(directionButtons[1])
         directionButtons[1].newStats = playerStats
+        directionButtons[1].setScale(0.6)
     }
 }
