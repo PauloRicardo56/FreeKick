@@ -266,17 +266,9 @@
 		238279B8242E9884001EEE55 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				238279B9242E9888001EEE55 /* Protocols */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		238279B9242E9888001EEE55 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
 				238279BA242E9893001EEE55 /* Moveable.swift */,
 			);
-			path = Protocols;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		23B1148524355FE100D813E6 /* Placar */ = {

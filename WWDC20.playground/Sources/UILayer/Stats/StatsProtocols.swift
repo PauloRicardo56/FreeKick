@@ -3,7 +3,6 @@ import SpriteKit
 
 protocol NewStatsToBall {
     var getValue: Int { get }
-    
     var contact: Bool { get }
 }
 

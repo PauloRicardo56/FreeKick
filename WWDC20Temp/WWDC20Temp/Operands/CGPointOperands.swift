@@ -1,5 +1,6 @@
 import SpriteKit
 
+
 infix operator ↖︎
 infix operator ↑
 infix operator ←
@@ -10,61 +11,61 @@ extension CGPoint {
         let x = lhs.x - rhs.x
         let y = lhs.y - rhs.y
         
-        return CGPoint(x: x, y: y)
+        return .init(x: x, y: y)
     }
     
     static func +(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
         let x = lhs.x + rhs.x
         let y = lhs.y + rhs.y
         
-        return CGPoint(x: x, y: y)
+        return .init(x: x, y: y)
     }
     
     static func +(lhs: CGPoint, rhs: Int) -> CGPoint {
         let x = lhs.x + CGFloat(rhs)
         let y = lhs.y + CGFloat(rhs)
         
-        return CGPoint(x: x, y: y)
+        return .init(x: x, y: y)
     }
     
     static func /(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
         let x = lhs.x / rhs.x
         let y = lhs.y / rhs.y
         
-        return CGPoint(x: x, y: y)
+        return .init(x: x, y: y)
     }
     
     static func /(lhs: CGPoint, rhs: Int) -> CGPoint {
         let x = lhs.x / CGFloat(rhs)
         let y = lhs.y / CGFloat(rhs)
         
-        return CGPoint(x: x, y: y)
+        return .init(x: x, y: y)
     }
     
     static func ↖︎(lhs: CGPoint, rhs: Int) -> CGPoint {
         let x = lhs.x - CGFloat(rhs)
         let y = lhs.y + CGFloat(rhs)
         
-        return CGPoint(x: x, y: y)
+        return .init(x: x, y: y)
     }
     
     static func ↑(lhs: CGPoint, rhs: Int) -> CGPoint {
         let y = lhs.y + CGFloat(rhs)
         
-        return CGPoint(x: lhs.x, y: y)
+        return .init(x: lhs.x, y: y)
     }
     
     static func ←(lhs: CGPoint, rhs: Int) -> CGPoint {
         let x = lhs.x - CGFloat(rhs)
         
-        return CGPoint(x: x, y: lhs.y)
+        return .init(x: x, y: lhs.y)
     }
     
     static func ↙︎(lhs: CGPoint, rhs: Int) -> CGPoint {
         let x = lhs.x - CGFloat(rhs)
         let y = lhs.y - CGFloat(rhs)
         
-        return CGPoint(x: x, y: y)
+        return .init(x: x, y: y)
     }
     
     /// Get the mid point of two vectors.

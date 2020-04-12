@@ -28,7 +28,7 @@ class Placar: SKSpriteNode {
     }
 }
 
-// MARK: -
+// MARK: - PlacarToBall
 extension Placar: PlacarToBall {
     func goal() {
         Placar.goals += 1

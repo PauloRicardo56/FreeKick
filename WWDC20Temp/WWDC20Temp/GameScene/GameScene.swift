@@ -34,27 +34,6 @@ class GameScene: SKScene {
         setup()
         loadScene()
         loadUI()
-        
-//        let label = LabelViewModel()
-//        label.position = .init(x: size.width/2, y: size.height/2)
-//        label.zPosition = 10
-//        addChild(label)
-//
-//        label.animate()
-        
-        
-//        for _ in 0...100 {
-//            let ball = SKShapeNode(circleOfRadius: 10)
-//            ball.fillColor = .blue
-//            ball.position = goalViewModel.getGoalPoint(side: Points.GoalsPoints.GkDefenseLeft())
-//            addChild(ball)
-//        }
-//        for _ in 0...100 {
-//            let ball = SKShapeNode(circleOfRadius: 10)
-//            ball.fillColor = .red
-//            ball.position = goalViewModel.getGoalPoint(side: Points.GoalsPoints.GkDefenseRight())
-//            addChild(ball)
-//        }
     }
     
     func setup() {

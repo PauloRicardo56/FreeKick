@@ -48,44 +48,25 @@ class ShootButton: SKSpriteNode {
     }
     
     func pressAnimation() {
-            var t = SKTexture()
-            let pressed = SKAction.run {
-                t = SKTexture(imageNamed: Assets.HUD.Shoot.pressed)
-                self.texture = t
-                self.size = t.size()
-    //            self.setScale(1.5)
-            }
-            
-            run(pressed)
+        var t = SKTexture()
+        let pressed = SKAction.run {
+            t = .init(imageNamed: Assets.HUD.Shoot.pressed)
+            self.texture = t
+            self.size = t.size()
         }
+        run(pressed)
+    }
         
-        func releaseAnimation() {
-            var t = SKTexture()
-            let release = SKAction.run {
-                t = SKTexture(imageNamed: Assets.HUD.Shoot.eff)
-                self.texture = t
-                self.size = t.size()
-    //            self.setScale(1.5)
-            }
-            
-            run(release)
+    func releaseAnimation() {
+        var t = SKTexture()
+        let release = SKAction.run {
+            t = .init(imageNamed: Assets.HUD.Shoot.eff)
+            self.texture = t
+            self.size = t.size()
         }
+        run(release)
+    }
 }
-
-// MARK: - ShootButtonToStats
-//extension ShootButton: ShootButtonToStats {
-//    func turnActive() {
-//        // TODO: Activate animation
-//        isUserInteractionEnabled = true
-//        alpha = 1
-//    }
-//
-//    func turnInactive() {
-//        // TODO: Deactivate animation
-//        isUserInteractionEnabled = false
-//        alpha = 0.3
-//    }
-//}
 
 // MARK: - ShootButtonToLayer
 extension ShootButton: ShootButtonToLayer {

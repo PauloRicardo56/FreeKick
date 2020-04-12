@@ -30,9 +30,9 @@ extension GoalViewModel: GoalToGameScene {
     }
     
     func loadGoal() -> SKSpriteNode {
-        goal = SKSpriteNode(imageNamed: Assets.Goal.frame1.rawValue)
+        goal = .init(imageNamed: Assets.Goal.frame1.rawValue)
         goal.setScale(1.85)
-        goal.anchorPoint = CGPoint(x: 0.5, y: 0)
+        goal.anchorPoint = .init(x: 0.5, y: 0)
         
         return goal
     }
@@ -49,21 +49,21 @@ extension GoalViewModel: GoalToBall {
         let randomX = Int.random(in: Int(minX)...Int(maxX))
         let randomY = Int.random(in: Int(minY)...Int(maxY))
         
-        return CGPoint(x: randomX, y: randomY)
+        return .init(x: randomX, y: randomY)
     }
     
     func getGkFallLeft() -> CGPoint {
         let x = goal.position.x - goalWidth*0.45
         let y = goal.position.y + goalHeight*0.3
         
-        return CGPoint(x: x, y: y)
+        return .init(x: x, y: y)
     }
     
     func getGkFallRight() -> CGPoint {
         let x = goal.position.x + goalWidth*0.05
         let y = goal.position.y + goalHeight*0.3
         
-        return CGPoint(x: x, y: y)
+        return .init(x: x, y: y)
     }
     
     func getGoalY() -> CGFloat {

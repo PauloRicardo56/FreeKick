@@ -14,10 +14,10 @@ class PlayerViewModel {
     
     func animate() -> SKAction {
         let frames = Assets.Player.allCases
-        var textures = [SKTexture]()
+        var textures: [SKTexture] = []
         
         for frame in frames {
-            textures.append(SKTexture(imageNamed: frame.rawValue))
+            textures.append(.init(imageNamed: frame.rawValue))
         }
         
         let action = SKAction.animate(with: textures, timePerFrame: playerSpeed/Double(frames.count))
@@ -34,8 +34,8 @@ extension PlayerViewModel: PlayerToGameScene {
     }
     
     func loadPlayer() -> SKSpriteNode {
-        player = SKSpriteNode(imageNamed: Assets.Player.frame1.rawValue)
-        player.anchorPoint = CGPoint(x: 0.5, y: 0.05)
+        player = .init(imageNamed: Assets.Player.frame1.rawValue)
+        player.anchorPoint = .init(x: 0.5, y: 0.05)
         
         return player
     }

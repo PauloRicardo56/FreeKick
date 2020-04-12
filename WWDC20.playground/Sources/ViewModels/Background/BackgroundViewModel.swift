@@ -35,7 +35,7 @@ extension Background: BackgroundToDirection {
             newPosition = currPosition + 1
             
             if newPosition <= totalPositions {
-                newTexture = SKTexture(imageNamed: frames[newPosition].rawValue)
+                newTexture = .init(imageNamed: frames[newPosition].rawValue)
                 currPosition = newPosition
                 self.texture = newTexture
                 goal.move(isLeft: leftSide)
@@ -48,7 +48,7 @@ extension Background: BackgroundToDirection {
             newPosition = currPosition - 1
             
             if newPosition >= 0 {
-                newTexture = SKTexture(imageNamed: frames[newPosition].rawValue)
+                newTexture = .init(imageNamed: frames[newPosition].rawValue)
                 currPosition = newPosition
                 self.texture = newTexture
                 goal.move(isLeft: leftSide)

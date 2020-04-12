@@ -44,8 +44,8 @@ extension BallViewModel: BallToGameScene {
     
     
     func loadBall() -> SKSpriteNode {
-        ball = SKSpriteNode(imageNamed: Assets.Ball.frame4.rawValue)
-        ball.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        ball = .init(imageNamed: Assets.Ball.frame4.rawValue)
+        ball.anchorPoint = .init(x: 0.5, y: 0.5)
         
         return ball
     }
@@ -193,7 +193,6 @@ extension BallViewModel: BallToPlayer {
                 textures.append(SKTexture(imageNamed: texture.rawValue))
             }
         }
-            
         
         return textures
     }

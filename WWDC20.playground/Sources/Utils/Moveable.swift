@@ -11,6 +11,6 @@ extension Moveable {
         let runRight = SKAction.moveTo(x: right, duration: duration)
         let sequence = SKAction.sequence([runRight, runLeft])
         
-        return SKAction.repeatForever(sequence)
+        return .repeatForever(sequence)
     }
 }

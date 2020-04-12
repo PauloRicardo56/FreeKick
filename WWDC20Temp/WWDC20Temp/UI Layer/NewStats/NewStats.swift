@@ -17,7 +17,7 @@ class NewStats: SKSpriteNode, Moveable {
         setUpSlideButton()
         setUpGreenBar()
         
-        anchorPoint = CGPoint(x: 0, y: 0.5)
+        anchorPoint = .init(x: 0, y: 0.5)
         addChild(slideButton)
     }
     
@@ -36,8 +36,8 @@ class NewStats: SKSpriteNode, Moveable {
     }
     
     func setUpGreenBar() {
-        greenBar = SKSpriteNode(imageNamed: Assets.Stat.StatBar.greenBar)
-        greenBar.anchorPoint = CGPoint(x: 0, y: 0.5)
+        greenBar = .init(imageNamed: Assets.Stat.StatBar.greenBar)
+        greenBar.anchorPoint = .init(x: 0, y: 0.5)
         greenBar.zPosition = 1
         greenBar.size.height *= 1.4
         if statType == Assets.Stat.StatIndicators.str {
@@ -50,7 +50,7 @@ class NewStats: SKSpriteNode, Moveable {
     }
     
     func setUpSlideButton() {
-        slideButton = SKSpriteNode(imageNamed: statType.indicator())
+        slideButton = .init(imageNamed: statType.indicator())
         slideButton.setScale(1.7)
         slideButton.zPosition = 2
         slideButton.position = .zero
@@ -66,7 +66,7 @@ class NewStats: SKSpriteNode, Moveable {
 // MARK: - NewStatsToBall
 extension NewStats: NewStatsToBall {
     var getValue: Int {
-        return Int(slideButton.position.x/size.width*100)
+        return .init(slideButton.position.x/size.width*100)
     }
     var contact: Bool {
         return slideButton.frame.intersects(greenBar.frame)
@@ -76,12 +76,12 @@ extension NewStats: NewStatsToBall {
 // MARK: - StatsToShootButton
 extension NewStats: StatsToShootButton {
     var getDuration: TimeInterval {
-        get { fadeOutDuration }
+        return fadeOutDuration
     }
     
     func fadeOutAnimation() -> SKAction {
-        return SKAction.run {
-            self.run(SKAction.fadeOut(withDuration: self.fadeOutDuration))
+        return .run {
+            self.run(.fadeOut(withDuration: self.fadeOutDuration))
         }
     }
     

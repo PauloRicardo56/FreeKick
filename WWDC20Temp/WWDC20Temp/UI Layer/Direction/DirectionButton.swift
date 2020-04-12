@@ -13,7 +13,6 @@ class DirectionButton: SKSpriteNode {
         self.isLeft = isLeft
         self.background = background
         super.init(texture: texture, color: .black, size: texture.size())
-//        setScale(1.5)
         
         isUserInteractionEnabled = true
     }
@@ -34,24 +33,20 @@ class DirectionButton: SKSpriteNode {
     func pressAnimation() {
         var t = SKTexture()
         let pressed = SKAction.run {
-            t = SKTexture(imageNamed: self.isLeft ? self.images.Left.pressed : self.images.Right.pressed)
+            t = .init(imageNamed: self.isLeft ? self.images.Left.pressed : self.images.Right.pressed)
             self.texture = t
             self.size = t.size()
-//            self.setScale(1.5)
         }
-        
         run(pressed)
     }
     
     func releaseAnimation() {
         var t = SKTexture()
         let release = SKAction.run {
-            t = SKTexture(imageNamed: self.isLeft ? self.images.Left.normal : self.images.Right.normal)
+            t = .init(imageNamed: self.isLeft ? self.images.Left.normal : self.images.Right.normal)
             self.texture = t
             self.size = t.size()
-//            self.setScale(1.5)
         }
-        
         run(release)
     }
 }

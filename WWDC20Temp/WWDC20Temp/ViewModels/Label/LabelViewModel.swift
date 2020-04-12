@@ -23,7 +23,7 @@ class LabelViewModel: SKSpriteNode {
         flash.zPosition = 15
         flash.alpha = 0
         
-        ball = SKSpriteNode(imageNamed: Assets.Ball.frame0.rawValue)
+        ball = .init(imageNamed: Assets.Ball.frame0.rawValue)
         ball.anchorPoint = .init(x: 0.5, y: 0.5)
         
         super.init(texture: nil, color: .init(red: 1, green: 1, blue: 1, alpha: 0.3), size: .init(width: 2000, height: 1600))

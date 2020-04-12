@@ -43,9 +43,9 @@ extension BallViewModel: BallToGameScene {
     }
     
     func loadBall() -> SKSpriteNode {
-        ball = SKSpriteNode(imageNamed: Assets.Ball.frame4.rawValue)
+        ball = .init(imageNamed: Assets.Ball.frame4.rawValue)
         ball.setScale(1.8)
-        ball.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        ball.anchorPoint = .init(x: 0.5, y: 0.5)
         
         return ball
     }
@@ -126,7 +126,7 @@ extension BallViewModel: BallToPlayer {
                         self.ball.removeFromParent()
                     }))
                 } else {
-                    self.ball.run(SKAction.scale(to: 0.1, duration: 2), completion: { self.gameVC.restart() })
+                    self.ball.run(.scale(to: 0.1, duration: 2), completion: { self.gameVC.restart() })
                 }
                 // MARK: FIM NO GOAL
             }
@@ -138,8 +138,8 @@ extension BallViewModel: BallToPlayer {
                 self.ball.run(follow, completion: completion2)
             }
             
-            self.ball.run(SKAction.animate(with: self.makeTextures(), timePerFrame: 0.1))
-            self.ball.run(SKAction.scale(to: 0.1, duration: 2.2), withKey: "scale")
+            self.ball.run(.animate(with: self.makeTextures(), timePerFrame: 0.1))
+            self.ball.run(.scale(to: 0.1, duration: 2.2), withKey: "scale")
         }
         
         return shootBall
@@ -166,7 +166,7 @@ extension BallViewModel: BallToPlayer {
         let fall3 = SKAction.moveTo(y: y, duration: speed*0.7)
         fall3.timingMode = .easeIn
         
-        return SKAction.sequence([fall1, frame1, up1, fall2, frame2, up2, fall3])
+        return .sequence([fall1, frame1, up1, fall2, frame2, up2, fall3])
     }
     
     func getBallPosition() -> CGPoint {
@@ -190,7 +190,7 @@ extension BallViewModel: BallToPlayer {
         
         for _ in 0...6 {
             for texture in frames {
-                textures.append(SKTexture(imageNamed: texture.rawValue))
+                textures.append(.init(imageNamed: texture.rawValue))
             }
         }
             

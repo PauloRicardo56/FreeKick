@@ -10,21 +10,11 @@ class Goalkeeper: SKSpriteNode, Moveable {
         let texture = SKTexture(imageNamed: Assets.Gk.Stay.frame1.rawValue)
         super.init(texture: texture, color: .black, size: texture.size())
         
-        anchorPoint = CGPoint(x: 0.5, y: 0.65)
+        anchorPoint = .init(x: 0.5, y: 0.65)
         setScale(0.7)
         self.goal = goal
         
         stayAnimation()
-//        jump(
-//            isLeft: true,
-//            ballPoint: goal.getGoalPoint(side: Points.GoalsPoints.GkDefenseLeft()),
-//            fallPoint: goal.getGkFallLeft()
-//        )
-//        jump(
-//            isLeft: false,
-//            ballPoint: goal.getGoalPoint(side: Points.GoalsPoints.GkDefenseRight()),
-//            fallPoint: goal.getGkFallRight()
-//        )
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,9 +25,9 @@ class Goalkeeper: SKSpriteNode, Moveable {
         var textures: [SKTexture] = []
         
         for t in Assets.Gk.Stay.allCases {
-            textures.append(SKTexture(imageNamed: t.rawValue))
+            textures.append(.init(imageNamed: t.rawValue))
         }
-        textures.append(SKTexture(imageNamed: Assets.Gk.Stay.frame2.rawValue))
+        textures.append(.init(imageNamed: Assets.Gk.Stay.frame2.rawValue))
         
         let animation = SKAction.repeatForever(.animate(with: textures, timePerFrame: 0.3, resize: true, restore: false))
         run(animation)
@@ -48,18 +38,7 @@ class Goalkeeper: SKSpriteNode, Moveable {
 extension Goalkeeper: GoalkeeperToBackground {
     func resetAnimation() {
         position.x = -goal.size.width*0.2 + goal.position.x
-        
-//        setUp()
     }
-}
-
-// MARK: - GoalkeeperToPlayer
-extension Goalkeeper: GoalkeeperToPlayer {
-//    func stop() -> SKAction {
-//        return SKAction.run {
-//            self.removeAllActions()
-//        }
-//    }
 }
 
 // MARK: - GoalkeeperToBall
@@ -80,7 +59,7 @@ extension Goalkeeper: GoalkeeperToBall {
         
         moveJump.timingMode = .easeInEaseOut
         for t in Assets.Gk.Jump.allCases {
-            tJump.append(SKTexture(imageNamed: t.rawValue))
+            tJump.append(.init(imageNamed: t.rawValue))
         }
         sequenceJump = .group([moveJump, .animate(with: tJump, timePerFrame: 0.17,
                                                   resize: true, restore: false)]
@@ -88,7 +67,7 @@ extension Goalkeeper: GoalkeeperToBall {
         
         moveFall.timingMode = .easeIn
         for t in Assets.Gk.Fall.allCases {
-            tFall.append(SKTexture(imageNamed: t.rawValue))
+            tFall.append(.init(imageNamed: t.rawValue))
         }
         sequenceFall = .group([moveFall, .animate(with: tFall, timePerFrame: 0.3,
                                                   resize: true, restore: false)]

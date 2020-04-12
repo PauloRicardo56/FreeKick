@@ -50,48 +50,13 @@ class ShootButton: SKSpriteNode {
     func pressAnimation() {
         let release = SKTexture(imageNamed: Assets.HUD.Shoot.pressed)
         run(.animate(with: [release], timePerFrame: 0, resize: true, restore: false))
+    }
         
-//            var t = SKTexture()
-//            let pressed = SKAction.run {
-//                t = SKTexture(imageNamed: Assets.HUD.Shoot.pressed)
-//                self.texture = t
-//                self.size = t.size()
-//    //            self.setScale(1.5)
-//            }
-//
-//            run(pressed)
-        }
-        
-        func releaseAnimation() {
-            let release = SKTexture(imageNamed: Assets.HUD.Shoot.eff)
-            run(.animate(with: [release], timePerFrame: 0, resize: true, restore: false))
-            
-//            var t = SKTexture()
-//            let release = SKAction.run {
-//                t = SKTexture(imageNamed: Assets.HUD.Shoot.eff)
-//                self.texture = t
-//                self.size = t.size()
-//    //            self.setScale(1.5)
-//            }
-//
-//            run(release)
-        }
+    func releaseAnimation() {
+        let release = SKTexture(imageNamed: Assets.HUD.Shoot.eff)
+        run(.animate(with: [release], timePerFrame: 0, resize: true, restore: false))
+    }
 }
-
-// MARK: - ShootButtonToStats
-//extension ShootButton: ShootButtonToStats {
-//    func turnActive() {
-//        // TODO: Activate animation
-//        isUserInteractionEnabled = true
-//        alpha = 1
-//    }
-//
-//    func turnInactive() {
-//        // TODO: Deactivate animation
-//        isUserInteractionEnabled = false
-//        alpha = 0.3
-//    }
-//}
 
 // MARK: - ShootButtonToLayer
 extension ShootButton: ShootButtonToLayer {
