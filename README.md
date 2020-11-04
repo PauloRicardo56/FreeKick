@@ -1,5 +1,5 @@
 # FreeKick
-Project made for WWDC20 scholarship, but...
+Project made for WWDC20 scholarship.
 
 An interactive scene of a free kick taken from a football (soccer) game.
 
